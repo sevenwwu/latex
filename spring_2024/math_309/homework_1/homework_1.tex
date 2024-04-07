@@ -108,10 +108,11 @@ For these problems, you should justify your answers. You do not need to provide 
 \end{problem}
 
 \begin{soln} 
+    \phantom{ }
     \begin{enumerate}
         \item When, $A = B$, when $A = \varnothing$, or when $B = \varnothing$.
         Or rephrased: $A\times B = B\times A \iff  (A = B) \lor (A =
-        \varnothing) \lor (B = \varnothing)$ Proof by contraposition: Suppose $A
+        \varnothing) \lor (B = \varnothing)$ Proof by contraposition: Assume $A
         \neq B \neq \varnothing$, where $ x \in A $ but $x \notin B$. Then,
         $\{(x,b) : b \in B \} \subseteq (A \times B)$ and  $\{(x,b) : b \in B \}
         \nsubseteq (B \times A)$. Because at least one member is present in $(A
@@ -121,19 +122,19 @@ For these problems, you should justify your answers. You do not need to provide 
         emptyset, because their are no elements to iterate over. 
         \item $|\mathscr P(A)\times\mathscr P(A)| = |\mathscr P(A\times A)|$ 
         
-        $|\mathscr P(A)| \cdot |\mathscr P(A)| = 2^{(|A| \cdot |A|)}$
+        \noindent$|\mathscr P(A)| \cdot |\mathscr P(A)| = 2^{(|A| \cdot |A|)}$
 
-        $2^{|A|} \cdot 2^{|A|} = 2^{(|A|^{2})}$
+        \noindent$2^{|A|} \cdot 2^{|A|} = 2^{(|A|^{2})}$
 
-        $2^{2|A|} = 2^{(|A|^{2})}$
+        \noindent$2^{2|A|} = 2^{(|A|^{2})}$
 
-        $2|A| = |A|^2$
+        \noindent$2|A| = |A|^2$
 
-        $0 = |A|^2 - 2|A| = |A|(|A| - 2)$
+        \noindent$0 = |A|^2 - 2|A| = |A|(|A| - 2)$
 
 
         
-        Thus, $|A| \in \{0,2\}$
+        \noindent Thus, $|A| \in \{0,2\}$
 
         \item $ A - B = \{x : x \in A, x \notin B\} = \varnothing$
         
@@ -141,7 +142,14 @@ For these problems, you should justify your answers. You do not need to provide 
         \rightarrow \lnot(x \in A))$. Applying logical inference of
         contraposition: $\forall x((x \in A) \rightarrow (x \in B))$. For every
         $x$ in $A$, it is also in $B$. This is the definition of a subset. Thus,
-        $A \subset B$. 
+        $A \subseteq B$. 
+
+        \item $X$ is the emptyset. $D = \{(a,a) : a \in A\}$ is the simplified
+        definition of the cartesian product if the left and right hand arguments
+        are the same. $D = (A \times A)$. $(A \times A) - D \iff (A \times A) -
+        (A \times A)$. If we take the conclusion of the above item, then,
+        because  $(A \times A) \subseteq (A \times A)$, $(A \times A) - (A
+        \times A) = \varnothing = X$.
     \end{enumerate}
 	
 \end{soln}
@@ -158,7 +166,29 @@ For these problems, you should justify your answers. You do not need to provide 
 \end{problem}
 
 \begin{soln}
-	
+    \phantom{ }
+    \begin{enumerate}
+        \item $\R^2\subseteq\R^3$ is false because there is at least one element
+        in $\R^2$ (take the ordered pair $(0,0)$ for example), that is not in
+        $\R^3$ (which has a similar but different math object $(0,0,0)$). 
+
+        \item $A\times\varnothing = \varnothing$ for every set $A$ is true and
+        was demonstrated above. ``The cartesian product of any set and the
+        emptyset is the emptyset, because their are no elements to iterate
+        over.'' Or rephrased, there are no pairs of elements we can make because
+        $\varnothing$ has no elements.
+
+        \item If $A\subseteq B$, then $\mathscr P(A)\subseteq\mathscr P(B)$ is
+        true. $\mathscr P(A) = \{X : X \subseteq A\}$. $X \subseteq A \subseteq
+        B \implies X \subseteq B$. $\mathscr P(A)$ thus contains only subsets of
+        B. Because, $\mathscr P(B)$ contains \textit{all} subsets of B,
+        $\mathscr P(A)\subseteq \mathscr P(B)$
+
+        \item If $\mathscr P(A)\subseteq\mathscr P(B)$, then $A\subseteq B$ is true.
+        Contraposition: $A \nsubseteq B \implies \mathscr P(A) \nsubseteq \mathscr P(B)$.
+        Let $x \in A$ and $x \notin B$. Then, $\{x\} \in \mathscr P(A)$ and $\{x\} \notin
+        \mathscr P(B)$. Thus, $\mathscr P(A) \nsubseteq \mathscr P(B)$. 
+	\end{enumerate}
 \end{soln}
 
 \end{document}
