@@ -107,7 +107,42 @@ For these problems, you should justify your answers. You do not need to provide 
 	\end{enumerate}
 \end{problem}
 
-\begin{soln}
+\begin{soln} 
+    \begin{enumerate}
+        \item When, $A = B$, when $A = \varnothing$, or when $B = \varnothing$.
+        Or rephrased: $A\times B = B\times A \iff  (A = B) \lor (A =
+        \varnothing) \lor (B = \varnothing)$ Proof by contraposition: Suppose $A
+        \neq B \neq \varnothing$, where $ x \in A $ but $x \notin B$. Then,
+        $\{(x,b) : b \in B \} \subseteq (A \times B)$ and  $\{(x,b) : b \in B \}
+        \nsubseteq (B \times A)$. Because at least one member is present in $(A
+        \times B)$ and not $(B \times A)$, $(A \times B) \neq (B \times A)$. The
+        other cases are trivial: if $A = B$, then $A \times B = A \times A = B
+        \times A$. The cartesian product of any set and the emptyset is the
+        emptyset, because their are no elements to iterate over. 
+        \item $|\mathscr P(A)\times\mathscr P(A)| = |\mathscr P(A\times A)|$ 
+        
+        $|\mathscr P(A)| \cdot |\mathscr P(A)| = 2^{(|A| \cdot |A|)}$
+
+        $2^{|A|} \cdot 2^{|A|} = 2^{(|A|^{2})}$
+
+        $2^{2|A|} = 2^{(|A|^{2})}$
+
+        $2|A| = |A|^2$
+
+        $0 = |A|^2 - 2|A| = |A|(|A| - 2)$
+
+
+        
+        Thus, $|A| \in \{0,2\}$
+
+        \item $ A - B = \{x : x \in A, x \notin B\} = \varnothing$
+        
+        No $x$ in $A$ that's not in $B$, thus, $\forall x(\lnot(x \in B)
+        \rightarrow \lnot(x \in A))$. Applying logical inference of
+        contraposition: $\forall x((x \in A) \rightarrow (x \in B))$. For every
+        $x$ in $A$, it is also in $B$. This is the definition of a subset. Thus,
+        $A \subset B$. 
+    \end{enumerate}
 	
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
