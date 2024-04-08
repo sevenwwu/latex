@@ -185,9 +185,18 @@ For these problems, you should justify your answers. You do not need to provide 
         $\mathscr P(A)\subseteq \mathscr P(B)$
 
         \item If $\mathscr P(A)\subseteq\mathscr P(B)$, then $A\subseteq B$ is true.
-        Contraposition: $A \nsubseteq B \implies \mathscr P(A) \nsubseteq \mathscr P(B)$.
+        
+        \noindent Contraposition: $A \nsubseteq B \implies \mathscr P(A) \nsubseteq \mathscr P(B)$.
         Let $x \in A$ and $x \notin B$. Then, $\{x\} \in \mathscr P(A)$ and $\{x\} \notin
         \mathscr P(B)$. Thus, $\mathscr P(A) \nsubseteq \mathscr P(B)$. 
+
+        \phantom{ }
+
+        \noindent Direct: $\{X : X \subseteq A\} \subseteq \mathscr P(B)$, thus, each $X
+        \in \mathscr P(B)$ including where $X = A$. Because $\mathscr P(B)$ contains
+        $A$ as an element, $A$ must be one combination of all the elements in $B$. 
+        This means $\forall x ((x \in A) \rightarrow (x \in B))$ and is the definition of
+        a subset. 
 	\end{enumerate}
 \end{soln}
 
