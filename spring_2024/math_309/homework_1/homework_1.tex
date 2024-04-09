@@ -18,6 +18,7 @@
 \usepackage[framemethod=default]{mdframed}
 \usepackage{framed}
 \usepackage{setspace}
+\usepackage{changepage}
 \newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
@@ -110,16 +111,40 @@ For these problems, you should justify your answers. You do not need to provide 
 \begin{soln} 
     \phantom{ }
     \begin{enumerate}
-        \item When, $A = B$, when $A = \varnothing$, or when $B = \varnothing$.
-        Or rephrased: $A\times B = B\times A \iff  (A = B) \lor (A =
-        \varnothing) \lor (B = \varnothing)$ Proof by contraposition: Assume $A
-        \neq B \neq \varnothing$, where $ x \in A $ but $x \notin B$. Then,
-        $\{(x,b) : b \in B \} \subseteq (A \times B)$ and  $\{(x,b) : b \in B \}
-        \nsubseteq (B \times A)$. Because at least one member is present in $(A
-        \times B)$ and not $(B \times A)$, $(A \times B) \neq (B \times A)$. The
-        other cases are trivial: if $A = B$, then $A \times B = A \times A = B
-        \times A$. The cartesian product of any set and the emptyset is the
-        emptyset, because their are no elements to iterate over. 
+        \item $A\times B = B\times A$ if and only if $(A = B) \lor (A =
+        \varnothing) \lor (B = \varnothing)$ 
+        
+        \noindent Proof by contraposition: 
+        
+        \begin{adjustwidth}{2em}{0em} 
+            Suppose $A \neq B \neq \varnothing$, where $ x \in A $ but $x \notin
+            B$. 
+            
+            \noindent Then, $\{(x,b) : b \in B \} \subseteq (A \times B)$ and
+            $\{(x,b) : b \in B \} \nsubseteq (B \times A)$. 
+            
+            \noindent Because at least one member is present in $(A \times B)$
+            and not $(B \times A)$,
+            
+            \noindent $(A \times B) \neq (B \times A)$. 
+        \end{adjustwidth}
+
+        \noindent The true cases are trivial,
+
+        \noindent \textbf{Case 1:}
+        \begin{adjustwidth}{2em}{0em}
+            If $A = B$, then $A \times B = A \times A = B \times A$.
+        \end{adjustwidth}
+        
+        \noindent \textbf{Case 2 \& 3:}
+        \begin{adjustwidth}{2em}{0em}
+            $A$ or $B$ equals $\varnothing$. The cartesian product of any set
+        and the empty set is the empty set, because their are no elements to
+        iterate over. 
+        
+        \end{adjustwidth}
+
+
         \item $|\mathscr P(A)\times\mathscr P(A)| = |\mathscr P(A\times A)|$ 
         
         \noindent$|\mathscr P(A)| \cdot |\mathscr P(A)| = 2^{(|A| \cdot |A|)}$
@@ -132,26 +157,24 @@ For these problems, you should justify your answers. You do not need to provide 
 
         \noindent$0 = |A|^2 - 2|A| = |A|(|A| - 2)$
 
-
-        
         \noindent Thus, $|A| \in \{0,2\}$
+
+        \phantom{ }
 
         \item $ A - B = \{x : x \in A, x \notin B\} = \varnothing$
         
-        No $x$ in $A$ that's not in $B$, thus, $\forall x(\lnot(x \in B)
-        \rightarrow \lnot(x \in A))$. Applying logical inference of
-        contraposition: $\forall x((x \in A) \rightarrow (x \in B))$. For every
-        $x$ in $A$, it is also in $B$. This is the definition of a subset. Thus,
-        $A \subseteq B$. 
+        \noindent No $x$ in $A$ that's not in $B$. This is the definition of a
+        subset. Thus, $A \subseteq B$. 
 
-        \item $X$ is the emptyset. $D = \{(a,a) : a \in A\}$ is the simplified
-        definition of the cartesian product if the left and right hand arguments
-        are the same. $D = (A \times A)$. $(A \times A) - D \iff (A \times A) -
-        (A \times A)$. If we take the conclusion of the above item, then,
-        because  $(A \times A) \subseteq (A \times A)$, $(A \times A) - (A
-        \times A) = \varnothing = X$.
+        \item $X$ is the empty set. 
+        
+        \noindent $D = \{(a,a) : a \in A\}$ is the simplified definition of the
+        cartesian product if the left and right hand arguments are the same. 
+        
+        \noindent$(A \times A) - D \iff (A \times A) - (A \times A)$. 
+        
+        \noindent The difference of a set and itself is the empty set. 
     \end{enumerate}
-	
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -174,29 +197,46 @@ For these problems, you should justify your answers. You do not need to provide 
 
         \item $A\times\varnothing = \varnothing$ for every set $A$ is true and
         was demonstrated above. ``The cartesian product of any set and the
-        emptyset is the emptyset, because their are no elements to iterate
-        over.'' Or rephrased, there are no pairs of elements we can make because
-        $\varnothing$ has no elements.
+        empty set is the empty set, because their are no elements to iterate
+        over.'' 
 
         \item If $A\subseteq B$, then $\mathscr P(A)\subseteq\mathscr P(B)$ is
-        true. $\mathscr P(A) = \{X : X \subseteq A\}$. $X \subseteq A \subseteq
-        B \implies X \subseteq B$. $\mathscr P(A)$ thus contains only subsets of
-        B. Because, $\mathscr P(B)$ contains \textit{all} subsets of B,
-        $\mathscr P(A)\subseteq \mathscr P(B)$
-
-        \item If $\mathscr P(A)\subseteq\mathscr P(B)$, then $A\subseteq B$ is true.
+        true. 
+            
+        \noindent Each subset of $A$ is also a subset of $B$ and must be a member of a set of all subsets of $B$. 
         
-        \noindent Contraposition: $A \nsubseteq B \implies \mathscr P(A) \nsubseteq \mathscr P(B)$.
-        Let $x \in A$ and $x \notin B$. Then, $\{x\} \in \mathscr P(A)$ and $\{x\} \notin
-        \mathscr P(B)$. Thus, $\mathscr P(A) \nsubseteq \mathscr P(B)$. 
+        \noindent Thus, $\mathscr P(A)\subseteq \mathscr P(B)$.
 
         \phantom{ }
 
-        \noindent Direct: $\{X : X \subseteq A\} \subseteq \mathscr P(B)$, thus, each $X
-        \in \mathscr P(B)$ including where $X = A$. Because $\mathscr P(B)$ contains
-        $A$ as an element, $A$ must be one combination of all the elements in $B$. 
-        This means $\forall x ((x \in A) \rightarrow (x \in B))$ and is the definition of
-        a subset. 
+        \phantom{ }
+
+        \phantom{ }
+
+        \item If $\mathscr P(A)\subseteq\mathscr P(B)$, then $A\subseteq B$ is true.
+        
+
+        \noindent Contraposition: 
+        
+        \begin{adjustwidth}{2em}{0em}
+            If $A \nsubseteq B$, then $\mathscr P(A) \nsubseteq \mathscr P(B)$.
+
+            \noindent Let $x \in A$ and $x \notin B$. 
+            
+            \noindent Then, $\{x\} \in \mathscr P(A)$ and $\{x\} \notin \mathscr P(B)$. 
+            
+            \noindent Thus, $\mathscr P(A) \nsubseteq \mathscr P(B)$. 
+        \end{adjustwidth}
+
+
+        \noindent Direct:
+        \begin{adjustwidth}{2em}{0em}
+            $\{X : X \subseteq A\} \subseteq \mathscr P(B)$, thus, each $X \in \mathscr P(B)$ including where $X = A$. 
+            
+            \noindent Because $\mathscr P(B)$ contains $A$ as an element, $A$ must be a particular combination of all the elements in $B$. 
+            
+            \noindent All elements in $A$ are in $B$, thus $A \subseteq B$. 
+        \end{adjustwidth}
 	\end{enumerate}
 \end{soln}
 
