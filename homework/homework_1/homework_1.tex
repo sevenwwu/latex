@@ -166,14 +166,16 @@ For these problems, you should justify your answers. You do not need to provide 
         \noindent No $x$ in $A$ that's not in $B$. This is the definition of a
         subset. Thus, $A \subseteq B$. 
 
-        \item $X$ is the empty set. 
+        \item $X$ is equal to every possible pairing of elements in A where an
+        element is not paired with itself. 
         
-        \noindent $D = \{(a,a) : a \in A\}$ is the simplified definition of the
-        cartesian product if the left and right hand arguments are the same. 
+        \noindent $D = \{(a,a) : a \in A\}$ is a subset of $A \times A$
+        because the cartesian product is equal to $\{(x,y) : x \in A, y \in A\}$,
+        and $D$ is particularly for every time $x = y$. 
         
-        \noindent$(A \times A) - D \iff (A \times A) - (A \times A)$. 
-        
-        \noindent The difference of a set and itself is the empty set. 
+        \noindent$(A \times A) - D = \{p : p \in (A \times A), p \notin D\}$
+
+        \noindent$(A \times A) - D = \{(x,y) : x \in A, y \in A, x \neq y\}$
     \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
