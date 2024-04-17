@@ -1,0 +1,256 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      IGNORE THIS FIRST PART        %%%%%%%%%%   EXCEPT TO ENTER/DELETE YOUR NAME WHERE INDICATED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{amsart}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{framed}
+\usepackage{setspace}
+\usepackage{changepage}
+
+\newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+
+\newcounter{problem_number}[section]
+\newcommand{\num}{\refstepcounter{problem_number}\arabic{problem_number}}
+\newcommand{\numlabel}[1]{\refstepcounter{problem_number}\label{#1}\arabic{problem_number}}
+
+\newtheorem*{theorem}{Theorem}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+\newenvironment{prf}
+{\medskip\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Proof]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}\medskip}
+
+\newenvironment{soln}
+{\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Solution]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+
+\setenumerate[1]{label=(\roman*)}
+
+\newcommand{\jeff}[1]{\textbf{\textcolor{WildStrawberry}{#1}}}
+\newcommand{\student}[1]{\textbf{\textcolor{Orange}{#1}}}
+\newcommand{\peer}[1]{\textbf{\textcolor{ForestGreen}{#1}}}
+
+\textwidth=6.5in
+\hoffset-.75in
+\textheight=9in
+\voffset-.75in
+\footskip=30pt
+\headheight=14pt
+\pagestyle{fancy}
+\lhead{\emph{\textcolor{Gray}{Homework \#3}}}			%%  UPDATE THE VERSION HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\chead{\emph{\textcolor{Gray}{MATH 309}}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\thispagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       ADD CUSTOM COMMANDS HERE     %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\RP}{\mathbb{RP}}
+
+\newcommand{\Ll}{\mathcal L}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\Rr}{\mathcal R}
+
+\newcommand{\Line}[1]{\overleftrightarrow{#1}}
+\newcommand{\Ray}[1]{\overrightarrow{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       NOW THE DOCUMENT BEGINS      %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+For these problems, you should justify your answers. You do not need to provide a rigorous mathematical proof, but rather an informal argument.
+
+\vspace{5mm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	Determine whether the following statements are logically equivalent without using a truth table.
+	$$P\wedge(Q\vee\sim Q)\ \text{ and }\ (\sim P)\Rightarrow (Q\wedge\sim Q)$$
+\end{problem}
+
+\begin{soln}
+	\phantom{ }
+    \begin{adjustwidth}{2em}{0em} 
+        Let's first look at $P \land (Q \lor \sim Q)$:
+        \begin{adjustwidth}{2em}{0em} 
+            A logical AND is true only when both arguments are true.
+            But $(Q \lor \sim Q)$ is always true, so this statement
+            only depends upon the logical value of $P$. 
+        \end{adjustwidth}
+
+        \noindent Now $(\sim P)\Rightarrow (Q\wedge\sim Q)$:
+        \begin{adjustwidth}{2em}{0em}
+            Because $(Q \lor \sim Q)$ is always false, the implication
+            statement will be true when $\sim P$ is false and false when
+            $\sim P$ is true. This is the same as saying it is logically equivalent
+            to $P$. 
+        \end{adjustwidth}
+
+        \noindent Because both statements are logically equivalent to $P$, and $P$ is
+        logically equivalent to itself. Thus, they are logically equivalent.
+    \end{adjustwidth}
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+
+    \phantom{ }
+\end{soln}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	Complete the following truth table.
+\end{problem}
+
+$$
+\renewcommand{\arraystretch}{2}
+\begin{array}{|c|c|c||c|c|c|}
+\hline
+P&Q&R&\ \sim Q \  &\ \sim Q\vee R\  &\ P\Rightarrow (\sim Q\vee R) \\
+\hline\hline
+\textsc{t}&\textsc{t}&\textsc{t}& \textsc{f}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{t}&\textsc{t}&\textsc{f}& \textsc{f}& \textsc{f}& \textsc{f}\\
+\hline
+\textsc{t}&\textsc{f}&\textsc{t}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{t}&\textsc{f}&\textsc{f}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{f}&\textsc{t}&\textsc{t}& \textsc{f}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{f}&\textsc{t}&\textsc{f}& \textsc{f}& \textsc{f}& \textsc{t}\\
+\hline
+\textsc{f}&\textsc{f}&\textsc{t}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{f}&\textsc{f}&\textsc{f}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\end{array}
+$$
+
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+	Use a truth table to verify the distributive law:
+	$$P\wedge(Q\vee R) = (P\wedge Q)\vee(P\wedge R)$$
+\end{problem}
+
+$$
+\renewcommand{\arraystretch}{2}
+\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+P&Q&R& Q \lor R & P\wedge(Q\vee R) &(P\wedge Q)\vee(P\wedge R)\\
+\hline\hline
+\textsc{t}&\textsc{t}&\textsc{t}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{t}&\textsc{t}&\textsc{f}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{t}&\textsc{f}&\textsc{t}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\hline
+\textsc{t}&\textsc{f}&\textsc{f}& \textsc{f}& \textsc{f}& \textsc{f}\\
+\hline
+\textsc{f}&\textsc{t}&\textsc{t}& \textsc{t}& \textsc{f}& \textsc{f}\\
+\hline
+\textsc{f}&\textsc{t}&\textsc{f}& \textsc{t}& \textsc{f}& \textsc{f}\\
+\hline
+\textsc{f}&\textsc{f}&\textsc{t}& \textsc{t}& \textsc{f}& \textsc{f}\\
+\hline
+\textsc{f}&\textsc{f}&\textsc{f}& \textsc{f}& \textsc{f}& \textsc{f}\\
+\hline
+\end{array}
+$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	Use a truth table to verify the following is a \textbf{tautology} -- i.e., it is \emph{always} true.
+	$$[(P\Rightarrow Q)\wedge(Q\Rightarrow R)]\Rightarrow (P\Rightarrow R)$$
+\end{problem}
+
+$$
+\renewcommand{\arraystretch}{2}
+\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+P&Q&R&P\Rightarrow Q&Q\Rightarrow R&P\Rightarrow R& [(P\Rightarrow Q)\wedge(Q\Rightarrow R)]\Rightarrow (P\Rightarrow R)\\
+\hline\hline
+\textsc{t}&\textsc{t}&\textsc{t}&\textsc{t} &\textsc{t} &\textsc{t} &\textsc{t} \\
+\hline
+\textsc{t}&\textsc{t}&\textsc{f}&\textsc{t} &\textsc{f} &\textsc{f} &\textsc{t} \\
+\hline
+\textsc{t}&\textsc{f}&\textsc{t}&\textsc{f} &\textsc{t} &\textsc{t} &\textsc{t} \\
+\hline
+\textsc{t}&\textsc{f}&\textsc{f}&\textsc{f} &\textsc{t} &\textsc{f} &\textsc{t} \\
+\hline
+\textsc{f}&\textsc{t}&\textsc{t}&\textsc{t} &\textsc{t} &\textsc{t} &\textsc{t} \\
+\hline
+\textsc{f}&\textsc{t}&\textsc{f}&\textsc{t} &\textsc{f} &\textsc{t} &\textsc{t} \\
+\hline
+\textsc{f}&\textsc{f}&\textsc{t}&\textsc{t} &\textsc{t} &\textsc{t} &\textsc{t} \\
+\hline
+\textsc{f}&\textsc{f}&\textsc{f}&\textsc{t} &\textsc{t} &\textsc{t} &\textsc{t} \\
+\hline
+\end{array}
+$$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
