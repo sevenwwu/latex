@@ -127,7 +127,7 @@ For these problems, you should justify your answers. You do not need to provide 
         \end{adjustwidth}
 
         \noindent Because both statements are logically equivalent to $P$, and $P$ is
-        logically equivalent to itself. Thus, they are logically equivalent.
+        logically equivalent to itself, they are logically equivalent.
     \end{adjustwidth}
     \phantom{ }
 
@@ -197,25 +197,25 @@ $$
 
 $$
 \renewcommand{\arraystretch}{2}
-\begin{array}{|c|c|c||c|c|c|c|}
+\begin{array}{|c|c|c||c|c|c|c|c|c|}
 \hline
-P&Q&R& Q \lor R & P\wedge(Q\vee R) &(P\wedge Q)\vee(P\wedge R)\\
+P&Q&R& Q \lor R &(P\wedge Q) &(P\wedge R) &P\wedge(Q\vee R) &(P\wedge Q)\vee(P\wedge R)\\
 \hline\hline
-\textsc{t}&\textsc{t}&\textsc{t}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\textsc{t}&\textsc{t}&\textsc{t}& \textsc{t}&\textsc{t}&\textsc{t} &\textsc{t}& \textsc{t}\\
 \hline
-\textsc{t}&\textsc{t}&\textsc{f}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\textsc{t}&\textsc{t}&\textsc{f}& \textsc{t}&\textsc{t}&\textsc{f} &\textsc{t}& \textsc{t}\\
 \hline
-\textsc{t}&\textsc{f}&\textsc{t}& \textsc{t}& \textsc{t}& \textsc{t}\\
+\textsc{t}&\textsc{f}&\textsc{t}& \textsc{t}&\textsc{f}&\textsc{t} &\textsc{t}& \textsc{t}\\
 \hline
-\textsc{t}&\textsc{f}&\textsc{f}& \textsc{f}& \textsc{f}& \textsc{f}\\
+\textsc{t}&\textsc{f}&\textsc{f}& \textsc{f}&\textsc{f}&\textsc{f} &\textsc{f}& \textsc{f}\\
 \hline
-\textsc{f}&\textsc{t}&\textsc{t}& \textsc{t}& \textsc{f}& \textsc{f}\\
+\textsc{f}&\textsc{t}&\textsc{t}& \textsc{t}&\textsc{f}&\textsc{f} &\textsc{f}& \textsc{f}\\
 \hline
-\textsc{f}&\textsc{t}&\textsc{f}& \textsc{t}& \textsc{f}& \textsc{f}\\
+\textsc{f}&\textsc{t}&\textsc{f}& \textsc{t}&\textsc{f}&\textsc{f} &\textsc{f}& \textsc{f}\\
 \hline
-\textsc{f}&\textsc{f}&\textsc{t}& \textsc{t}& \textsc{f}& \textsc{f}\\
+\textsc{f}&\textsc{f}&\textsc{t}& \textsc{t}&\textsc{f}&\textsc{f} &\textsc{f}& \textsc{f}\\
 \hline
-\textsc{f}&\textsc{f}&\textsc{f}& \textsc{f}& \textsc{f}& \textsc{f}\\
+\textsc{f}&\textsc{f}&\textsc{f}& \textsc{f}&\textsc{f}&\textsc{f} &\textsc{f}& \textsc{f}\\
 \hline
 \end{array}
 $$
