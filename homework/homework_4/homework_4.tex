@@ -18,6 +18,8 @@
 \usepackage[framemethod=default]{mdframed}
 \usepackage{framed}
 \usepackage{setspace}
+\usepackage{changepage}
+
 \newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
@@ -58,7 +60,7 @@
 \headheight=14pt
 \pagestyle{fancy}
 \lhead{\emph{\textcolor{Gray}{Homework \#4}}}			%%  UPDATE THE VERSION HERE!!!
-\rhead{\emph{\textcolor{Gray}{student-name}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
 \chead{\emph{\textcolor{Gray}{MATH 309}}}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.35pt}
@@ -111,7 +113,49 @@ For these problems, you should justify your answers. You do not need to provide 
 \end{problem}
 
 \begin{soln}
-	
+	\phantom{ }
+	\begin{enumerate}
+		\item $(Q \land P) \lor (\sim P \land \sim Q)$
+		
+		\noindent Either both $P$ and $Q$, or not $P$ and not $Q$ (but not both because
+		that would lead to contradiction). This is really what $P \Leftrightarrow Q$ is 
+		saying.
+
+		\phantom{ }
+
+
+
+		\item $\sim P \lor Q$
+		
+		\noindent This is material implication and is actually the definition of a 
+		logical conditional statement. It's derived from the only case when a 
+		conditional is false: 
+		
+		\noindent $\sim (P \land \sim Q) \iff (\sim P \lor Q)$
+
+		\phantom{ }
+
+
+
+		\item $\sim (\sim P \lor \sim Q)$
+		
+		\noindent Applying De Morgan's law and double negation elimination: 
+		
+		\noindent $\sim (\sim P \lor \sim Q) \iff (\sim \sim P \land \sim \sim Q)
+		\iff (P \land Q)$
+
+		\phantom{ }
+
+
+		
+		\item $\sim (\sim P \land \sim Q)$
+		
+		\noindent De Morgan's law is true inversely as well, so the same argument
+		applies:
+		
+		\noindent $\sim (\sim P \land \sim Q) \iff (\sim \sim P \lor \sim \sim Q)
+		\iff (P \lor Q)$
+	\end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -127,8 +171,51 @@ $$\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N$$
 \end{problem}
 
 \begin{soln}
-	
+	\phantom{ }
+
+	\begin{enumerate}
+		\item ``For all natural numbers, there is at least one subset of the 
+		natural numbers that has a cardinality greater than or equal to that
+		particular natural number.''
+		
+
+		\item $\sim (\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N)$
+		
+		\noindent We can start by nesting the quantifiers to make simplification clearer:
+		
+		\noindent $\sim \forall N ((N \in \mathbb N) \Rightarrow (\exists X((X \in \mathscr P(\N)) \land (|X| \geq N))))$
+		
+		\noindent Then we can move the negation inward: 
+
+		\noindent $\exists N \sim ((N \in \mathbb N) \Rightarrow (\exists X((X \in \mathscr P(\N)) \land (|X| \geq N))))$
+
+		\noindent $\exists N ((N \in \mathbb N) \land \sim (\exists X((X \in \mathscr P(\N)) \land (|X| \geq N))))$
+
+		\noindent $\exists N ((N \in \mathbb N) \land (\forall X \sim((X \in \mathscr P(\N)) \land (|X| \geq N))))$
+
+		\noindent $\exists N ((N \in \mathbb N) \land (\forall X ((X \in \mathscr P(\N)) \Rightarrow \sim (|X| \geq N))))$
+
+		\noindent $\exists N ((N \in \mathbb N) \land (\forall X ((X \in \mathscr P(\N)) \Rightarrow (|X| < N))))$
+
+		\noindent De-nest quantifiers:
+
+		\noindent $\exists N \in \mathbb N, \forall X \in \mathscr P (\mathbb N),N > |X|$
+
+
+		\item ``There exists a natural number that is greater than cardinality of every subset
+		of the natural numbers.''
+
+		\item The original statement is true (and its negation is false). This
+		is because for each natural number, you can make a subset that contains
+		all proceeding numbers and the number in question. The cardinality of
+		this set will match the value of the number. 
+
+		\phantom{ }
+
+	\end{enumerate}
 \end{soln}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
 	Consider the following English sentence.
@@ -145,7 +232,40 @@ $$\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N$$
 \end{problem}
 
 \begin{soln}
-	
+	\phantom{ }
+	\begin{enumerate}
+		\item $\forall r \in \mathbb Q,\exists M \in \mathbb N,
+		(r \neq 0) \Rightarrow  (\frac{M}{r} \in \mathbb Z)$
+
+		\item $\exists r \in \mathbb Q, \forall M \in \mathbb N, (r \neq 0)
+		\land (\frac{M}{r} \notin \mathbb Z)$
+
+		\item ``There exists some rational number such that there is no natural number
+		it can divide and yield an integer.''
+
+		\item The original statement is true (and its negation false). 
+		
+		% \noindent $\forall r \in \mathbb Q$ can be thought of as 
+		% $\forall r \in \{\frac{a}{b}:a,b\in \mathbb Z, b \neq 0\}$.
+		
+		% \noindent Is there a natural number for every combo $a$ and $b$ such that 
+		% $\frac{M}{\frac{a}{b}}$ is an integer? 
+		
+		% \noindent Yes, because $\frac{M}{\frac{a}{b}} 
+		% = \frac{M}{a}b$ and $a \neq 0$, we can pick $M = |a|$ for every rational
+		% number. $\pm b \in \mathbb Z$.
+
+		\noindent Suppose $a,b \in \mathbb Z$, where $b \neq 0$, such that $\frac{a}{b} = r$.
+
+		\noindent $a \neq 0$ because $r \neq 0$.
+
+		\noindent Let $M$ be some natural number equal to $|a|$.
+		
+		\noindent $\frac{M}{\frac{a}{b}} = \frac{M}{a}b = \frac{|a|}{a}b = \pm b$
+
+		\noindent Thus, $\pm b \in \mathbb Z$ for all $a$ and $b$, where $a \neq 0$
+		and $b \neq 0$. 
+	\end{enumerate}
 \end{soln}
 
 
