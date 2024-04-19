@@ -150,7 +150,7 @@ For these problems, you should justify your answers. You do not need to provide 
 		
 		\item $\sim (\sim P \land \sim Q)$
 		
-		\noindent De Morgan's law is true inversely as well, so the same argument
+		\noindent De Morgan's law works inversely as well, so the same argument
 		applies:
 		
 		\noindent $\sim (\sim P \land \sim Q) \iff (\sim \sim P \lor \sim \sim Q)
@@ -174,9 +174,8 @@ $$\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N$$
 	\phantom{ }
 
 	\begin{enumerate}
-		\item ``For all natural numbers, there is at least one subset of the 
-		natural numbers that has a cardinality greater than or equal to that
-		particular natural number.''
+		\item ``For every natural number $x$, there is at least one subset of the 
+		natural numbers that has a cardinality greater than or equal to $x$.''
 		
 
 		\item $\sim (\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N)$
@@ -206,15 +205,16 @@ $$\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N$$
 		of the natural numbers.''
 
 		\item The original statement is true (and its negation is false). This
-		is because for each natural number, you can make a subset that contains
-		all proceeding numbers and the number in question. The cardinality of
-		this set will match the value of the number. 
+		is because for each natural number $x$, you can make a subset that contains
+		all less than or equal to $x$. The cardinality of
+		this set will be equal to $x$.
 
 		\phantom{ }
 
 	\end{enumerate}
 \end{soln}
 
+\vspace*{1em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -240,8 +240,8 @@ $$\forall N\in\N,\exists X\in\mathscr P(\N),|X|\geq N$$
 		\item $\exists r \in \mathbb Q, \forall M \in \mathbb N, (r \neq 0)
 		\land (\frac{M}{r} \notin \mathbb Z)$
 
-		\item ``There exists some rational number such that there is no natural number
-		it can divide and yield an integer.''
+		\item ``There exists some non-zero rational number $r$ such that there is no
+		natural number $M$ where $\frac{M}{r}$ is an integer.''
 
 		\item The original statement is true (and its negation false). 
 		
