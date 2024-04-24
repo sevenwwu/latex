@@ -116,13 +116,13 @@ For these problems, you should justify your answers. You do not need to provide 
 \begin{soln}
 	\phantom{ }
     \begin{enumerate}
-        \item $(26-5)^8$
-        \item $\frac{(26-5)!}{(25-5-8)!}$
-        \item $5 \cdot 26^7$
-        \item $5 \cdot \frac{(26-1)!}{(26-1-7)!}$
-        \item $26^8 - (26-5)^8$
-        \item $5 \cdot 8 \cdot \frac{(26-5)!}{(26-5-7)!}$
-        \item $\frac{(26-1)!}{(26-1-8)!} - \frac{(26-1-5)!}{(26-1-5-8)!}$
+        \item $(26-5)^8 = 37,822,859,361$
+        \item $\frac{(26-5)!}{(25-5-8)!} = 106,661,318,400$
+        \item $5 \cdot 26^7 = 40,159,050,880$
+        \item $5 \cdot \frac{(26-1)!}{(26-1-7)!} = 12,113,640,000$
+        \item $26^8 - (26-5)^8 = 171,004,205,215$
+        \item $5 \cdot 8 \cdot \frac{(26-5)!}{(26-5-7)!} = 23,442,048,000$
+        \item $\frac{(26-1)!}{(26-1-7)!} - \frac{(26-1-5)!}{(26-1-5-7)!} = 2,032,027,200$
     \end{enumerate}
 \end{soln}
 
@@ -155,26 +155,14 @@ For these problems, you should justify your answers. You do not need to provide 
 \begin{soln}
 	\phantom{ }
 
-	\noindent First intuition, there are two empty seats, which can be solved
-	with stars in bars, but may make seating of the front and back row people
-	difficult. Instead we might want to treat the two empty seats as two
-	unique people, but simply divide by 2 at the end because all permutations
-	where they are "swapped" should not be counted.   
+	\noindent 
 
-	% first attempt
-    % $\frac{1}{2} \cdot (16! - \text{front 5 misplaced} - \text{back 4 misplaced} + \text{front 5 and back 4 misplaced})$
-
-	% $\text{front 5 misplaced} = 16! - \frac{(16-5)!}{(16-5-8)!} \cdot 8!$
-
-	% $\text{back 4 misplaced} = 16! - \frac{(16-4)!}{(16-4-8)!} \cdot 8!$
-
-	% $\text{front 5 and back 4 misplaced} = 16! - $
-
-	\noindent $\frac{1}{2} \cdot \text{pick 5 seats in the front} \cdot \text{pick 4 seats in the back}
+	
+	\noindent $\text{pick 5 seats in the front} \cdot \text{pick 4 seats in the back}
 	\cdot \text{place rest (including empty seats)}$
 
-	\noindent $\frac{1}{2} \cdot (({8 \choose 5}\cdot 5!) \cdot ({8 \choose 4} \cdot 4!)
-	\cdot (16-(5+4))!) = 28,449,792,000$
+	\noindent $({8 \choose 5}\cdot 5!) \cdot ({8 \choose 4} \cdot 4!) \cdot ({7 \choose 2} \cdot 5!) = 28,449,792,000$
+
 \end{soln}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
