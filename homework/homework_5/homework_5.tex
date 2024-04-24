@@ -155,7 +155,24 @@ For these problems, you should justify your answers. You do not need to provide 
 \begin{soln}
 	\phantom{ }
 
-    ${16 \choose 2} \cdot 14! - \text{whenever 1 of the 5 sitting in the back} - \text{whenever one of the 4 siting in the front}$
+	\noindent First intuition, there are two empty seats, which can be solved
+	with stars in bars, but may make seating of the front and back row people
+	difficult. Instead we might want to treat the two empty seats as two
+	unique people, but simply divide by 2 at the end because all permutations
+	where they are "swapped" should not be counted.   
+
+	% first attempt
+    % $\frac{1}{2} \cdot (16! - \text{front 5 misplaced} - \text{back 4 misplaced} + \text{front 5 and back 4 misplaced})$
+
+	% $\text{front 5 misplaced} = 16! - \frac{(16-5)!}{(16-5-8)!} \cdot 8!$
+
+	% $\text{back 4 misplaced} = 16! - \frac{(16-4)!}{(16-4-8)!} \cdot 8!$
+
+	% $\text{front 5 and back 4 misplaced} = 16! - $
+
+
+
+	$\frac{1}{2} \cdot (16! )$
 \end{soln}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
