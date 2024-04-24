@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      IGNORE THIS FIRST PART        %%%%%%%%%%   EXCEPT TO ENTER/DELETE YOUR NAME WHERE INDICATED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{amsart}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{framed}
+\usepackage{setspace}
+\newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+
+\newcounter{problem_number}[section]
+\newcommand{\num}{\refstepcounter{problem_number}\arabic{problem_number}}
+\newcommand{\numlabel}[1]{\refstepcounter{problem_number}\label{#1}\arabic{problem_number}}
+
+\newtheorem*{theorem}{Theorem}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+\newenvironment{prf}
+{\medskip\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Proof]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}\medskip}
+
+\newenvironment{soln}
+{\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Solution]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+
+\setenumerate[1]{label=(\roman*)}
+
+\newcommand{\jeff}[1]{\textbf{\textcolor{WildStrawberry}{#1}}}
+\newcommand{\student}[1]{\textbf{\textcolor{Orange}{#1}}}
+\newcommand{\peer}[1]{\textbf{\textcolor{ForestGreen}{#1}}}
+
+\textwidth=6.5in
+\hoffset-.75in
+\textheight=9in
+\voffset-.75in
+\footskip=30pt
+\headheight=14pt
+\pagestyle{fancy}
+\lhead{\emph{\textcolor{Gray}{Homework \#5}}}			%%  UPDATE THE VERSION HERE!!!
+\rhead{\emph{\textcolor{Gray}{}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\chead{\emph{\textcolor{Gray}{MATH 309}}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\thispagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       ADD CUSTOM COMMANDS HERE     %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\RP}{\mathbb{RP}}
+
+\newcommand{\Ll}{\mathcal L}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\Rr}{\mathcal R}
+
+\newcommand{\Line}[1]{\overleftrightarrow{#1}}
+\newcommand{\Ray}[1]{\overrightarrow{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       NOW THE DOCUMENT BEGINS      %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+For these problems, you should justify your answers. You do not need to provide a rigorous mathematical proof, but rather an informal argument.
+
+\vspace{5mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	The English alphabet has 26 letters and 5 vowels. How many lists of 8 English letters are there that...
+	\begin{enumerate}
+		\item contain no vowels, if letters can be repeated?
+		\item contain no vowels, if letters cannot be repeated?
+		\item start with a vowel, if letters can be repeated?
+		\item start with a vowel, if letters cannot be repeated?
+		\item contain at least one vowel, if letters can be repeated?
+		\item contain exactly one vowel, if letters cannot be repeated?
+		\item start with \textsc{z} and contain at least one vowel, if letters cannot be repeated?
+	\end{enumerate}
+\end{problem}
+
+\begin{soln}
+	
+\end{soln}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	How many hands from a standard 52-card deck contain a full house? (A full house means three cards of one value and two cards of a second value.)
+\end{problem}
+
+\begin{soln}
+	
+\end{soln}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	A classroom has 2 rows of 8 desks. There are 14 students, 5 of whom always sit in the front row, and 4 of whom always sit in the back row. In how many ways can the students be seated?
+\end{problem}
+
+\begin{soln}
+	
+\end{soln}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
