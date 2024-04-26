@@ -119,17 +119,27 @@ For these problems, you should justify your answers. You do not need to provide 
         
         \includegraphics[width=12em]{media/1.1.png}
 
-        $\{(x,y) \in \mathbb R^2:x^2+4y^2\leq16\}$
+        $\{(x,y) \in \mathbb R^2:x^2+4y^2\leq16 \land (x \in \mathbb Z \lor y \in \mathbb Z)\}$
 
         \item \phantom{ }
         
         \includegraphics[width=12em]{media/1.2.png}
 
-        $\{(x,y) \in \mathbb Z^2:x^2+4y^2\leq16\}$
+        $\{(x,y) \in \mathbb R^2:x^2+4y^2\leq16\land (x \in \mathbb Z \land y \in \mathbb Z)\}$
 
         \item \phantom{ }
         
         \includegraphics[width=12em]{media/1.3.png}
+
+		$\{(x,y) \in \mathbb R^2:x^2+4y^2\leq16\ \land (x \notin \mathbb Z \land y \notin \mathbb Z)\}$
+
+		\phantom{ }
+
+		\item \phantom{ }
+		
+		\includegraphics[width=12em]{media/1.4.png}
+		
+		$\{(x,y) \in \mathbb R^2:x^2+4y^2\leq16\ \land (x \notin \mathbb Z \lor y \notin \mathbb Z)\}$
     \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,7 +157,26 @@ For these problems, you should justify your answers. You do not need to provide 
 \end{problem}
 
 \begin{soln}
-	
+	\phantom{ }
+	\begin{enumerate}
+		\item False. $\mathbb N$'s cardinality is $\aleph_0$ which is the smallest infinite cardinality.
+		\item False. In this context $\overline{A} = \mathbb N - A$. No matter how big $|A|$ is, $|A|
+		< |\mathbb N|$, so $|A| = |\mathbb N|$ and $\overline{A} \notin \mathcal F$.
+		\item False. There are an infinite number of finite (and infinite) subsets of $\mathbb N$. 
+		
+		\noindent Consider $S = \{\{1\},\{2\},\{3\}\dots\} = \{\{x\}: x \in \mathbb N\}$.
+
+		\noindent $A \subseteq \mathcal F$ and $A$'s cardinality is clearly infinite, thus so is
+		$\mathcal F$'s. 
+
+		\item False. $\displaystyle\bigcup_{n=1}^\infty A_n$ \textit{is} $\mathbb N$. Consider $S$
+		from the previous subproblem, the union of the singletons as we reach all in $\mathbb N$ is
+		equal to $\mathbb N$. 
+		
+		\item True. $\{0\}$ and $\{1\}$ are subsets of $\mathbb N$ and thus members of $\mathcal F$.
+		Their intersection is $\varnothing$, thus $\displaystyle\bigcap_{n=1}^\infty A_n = \varnothing$.
+		$\varnothing$ is also a subset of $\mathbb N$ and thus a member of $\mathcal F$.  
+	\end{enumerate}
 \end{soln}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
