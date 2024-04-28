@@ -1,0 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      IGNORE THIS FIRST PART        %%%%%%%%%%   EXCEPT TO ENTER/DELETE YOUR NAME WHERE INDICATED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{amsart}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{framed}
+\usepackage{setspace}
+\newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+
+\newcounter{problem_number}[section]
+\newcommand{\num}{\refstepcounter{problem_number}\arabic{problem_number}}
+\newcommand{\numlabel}[1]{\refstepcounter{problem_number}\label{#1}\arabic{problem_number}}
+
+\newtheorem*{theorem}{Theorem}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+\newenvironment{prf}
+{\medskip\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Proof]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}\medskip}
+
+\newenvironment{soln}
+{\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Solution]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+
+\setenumerate[1]{label=(\roman*)}
+
+\newcommand{\jeff}[1]{\textbf{\textcolor{WildStrawberry}{#1}}}
+\newcommand{\student}[1]{\textbf{\textcolor{Orange}{#1}}}
+\newcommand{\peer}[1]{\textbf{\textcolor{ForestGreen}{#1}}}
+
+\textwidth=6.5in
+\hoffset-.75in
+\textheight=9in
+\voffset-.75in
+\footskip=30pt
+\headheight=14pt
+\pagestyle{fancy}
+\lhead{\emph{\textcolor{Gray}{Chapter 2 Bonus Homework}}}			%%  UPDATE THE VERSION HERE!!!
+\rhead{\emph{\textcolor{Gray}{student-name}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\chead{\emph{\textcolor{Gray}{MATH 309}}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\thispagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       ADD CUSTOM COMMANDS HERE     %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\RP}{\mathbb{RP}}
+
+\newcommand{\Ff}{\mathcal F}
+\newcommand{\Ll}{\mathcal L}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\Rr}{\mathcal R}
+
+\newcommand{\Line}[1]{\overleftrightarrow{#1}}
+\newcommand{\Ray}[1]{\overrightarrow{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       NOW THE DOCUMENT BEGINS      %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	For each statement below, (a) write the statement in symbolic logic, (b) write the negation of the statement in symbolic logic, and (c) write the negation of the statement in English.
+	\begin{enumerate}
+		\item \emph{If $n$ is a natural number greater than one, then $n$ is divisible by a prime number $p$.}
+		\item \emph{For every positive real number $\varepsilon$, there is a positive real number $\delta$ with the property that $|f(x)-f(a)|<\varepsilon$ whenever $|x-a|<\delta$.}
+		\item For any vector $\vec v$, there exist real numbers $c_1,c_2,\ldots,c_n$ such that
+			$$\vec v = c_1\vec e_1 + c_2\vec e_2 + \cdots + c_n\vec e_n.$$
+		\item The set $A$ is an element of the set $X$, but $A$ is not an element of $\mathscr P(X)$.
+	\end{enumerate}
+\end{problem}
+
+\begin{soln}
+	
+\end{soln}
+
+\end{document}
