@@ -108,13 +108,27 @@ For these problems, you should justify your answers. You do not need to provide 
 \begin{soln}
     \phantom{ }
 
-	\noindent The left side of the equality reads ``Pick $k$ items from a set of $n$ items, then mark/color/indicate $m$
-    of those picked''.
+	\noindent Suppose, $C \subseteq B \subseteq A$, where $|A| = n$, $|B| = k$, and $|C| = m$.
+    Each combination is equal to another if both $B$ and $C$ have the exact same elements.
 
-    \noindent The right side of the equality reads ``Pick $m$ items from a set of $n$ items and mark them. Then, from the
-    remaining $n-m$ items, fill the selection by picking $k$ items total (which is $k-m$ more).''
+    \phantom{ }
 
-    \noindent Both sides are really counting the same thing, we are just doing the same commutative actions in a different order. 
+    \noindent The left side counts each unique combination of $B$ and $C$ by first filling $B$ with $k$ 
+    elements from $n$, then picking $m$ elements from $B$ to fill $C$. 
+
+    \phantom{ }
+
+    \noindent Let's try counting this another way. Suppose we first pick the elements that should
+    fill $C$, so ${n \choose m}$. Then, because $B$ has a cardinality $k$ and is a subset of $C$,
+    we should first, fill $B$ with all elements from $C$, then pick the remaining $k - m$ elements
+    from the rest of $A$. $A$ has $n - m$ remaining elements. So, ${n-m \choose k-m}$. Thus, the total
+    count will be ${n\choose m}{n-m\choose k-m}$. 
+
+    \phantom{ }
+    
+    \noindent It has been shown that you can count the same set of combinations of $B$ and $C$
+    two different ways. Thus, ${n\choose k}{k\choose m} = {n\choose m}{n-m\choose k-m}$.
+
 
     % \noindent $\displaystyle\frac{n!}{k!(n-k)!}\frac{k!}{m!(k-m)!} = \frac{n!}{m!(n-m)!}\frac{(n-m)!}{(k-m)!(n-m-k+m)!}$
 
