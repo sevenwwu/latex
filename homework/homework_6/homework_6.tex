@@ -60,7 +60,7 @@
 \headheight=14pt
 \pagestyle{fancy}
 \lhead{\emph{\textcolor{Gray}{Homework \#6}}}			%%  UPDATE THE VERSION HERE!!!
-\rhead{\emph{\textcolor{Gray}{}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
 \chead{\emph{\textcolor{Gray}{MATH 309}}}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.35pt}
@@ -108,7 +108,7 @@ For these problems, you should justify your answers. You do not need to provide 
 \begin{soln}
     \phantom{ }
 
-	\noindent Suppose, $C \subseteq B \subseteq A$, where $|A| = n$, $|B| = k$, and $|C| = m$.
+	\noindent Suppose $C \subseteq B \subseteq A$, where $|A| = n$, $|B| = k$, and $|C| = m$.
     Each combination is equal to another if both $B$ and $C$ have the exact same elements.
 
     \phantom{ }
@@ -125,7 +125,7 @@ For these problems, you should justify your answers. You do not need to provide 
     count will be ${n\choose m}{n-m\choose k-m}$. 
 
     \phantom{ }
-    
+
     \noindent It has been shown that you can count the same set of combinations of $B$ and $C$
     two different ways. Thus, ${n\choose k}{k\choose m} = {n\choose m}{n-m\choose k-m}$.
 
@@ -154,24 +154,51 @@ For these problems, you should justify your answers. You do not need to provide 
     \textbf{Combinatorial Proof:}
 
     \begin{adjustwidth}{2em}{0em}
-        \noindent The left side the equality is counting the number of different ways we can 
-        put $n$ elements into $2$ exclusive subsets $A$ and $B$, where we do not have to use all $n$ elements.
-        For example with $1$ element, we can put it in into $A$ or $B$. With $2$ elements $x$ and $y$,
-        we can put them both in $A$, both in $B$, $x$ in $A$ and $y$ in $B$, or $x$ in $B$ and $y$ in $A$.
+        % \noindent The left side the equality is counting the number of different ways we can 
+        % put $n$ elements into $2$ exclusive subsets $A$ and $B$, where we do not have to use all $n$ elements.
+        % For example with $1$ element, we can put it in into $A$ or $B$. With $2$ elements $x$ and $y$,
+        % we can put them both in $A$, both in $B$, $x$ in $A$ and $y$ in $B$, or $x$ in $B$ and $y$ in $A$.
+
+        % \phantom{ }
+
+        % \noindent The right side of the equality is counting
+        % the number of different ways we can put $n$ objects into $3$ bins. We have three choices
+        % for each element, with a unique thing to count every time we move an element between bins.
+
+        % \phantom{ }
+
+        % \noindent Now, this is actually really what we're doing on the left side. For each element
+        % it is either being picked to be placed in subset $A$ or $B$, or it is being left out of both.
+        % This left out of both can simply be subset $C$. $A \cup B \cup C$ contain all elements, and
+        % $A \cap B = \varnothing$, $B \cap C = \varnothing$, $A \cap C = \varnothing$. This is
+        % exactly what we are doing on the right side. 
+
+        \noindent Suppose we have set $S$ of cardinality $n$ and want to know how many
+        different ways we can make $A \subseteq S$ and $B \subseteq S$,
+        where $A \cap B = \varnothing$.
 
         \phantom{ }
 
-        \noindent The right side of the equality is counting
-        the number of different ways we can put $n$ objects into $3$ bins. We have three choices
-        for each element, with a unique thing to count every time we move an element between bins.
+        \noindent One way we can count this is by counting the number of ways for some $k$ elements of $S$
+        to be placed in $A$ or $B$. Then summing the total from each value of $k$ where $0 \leq k \leq n$. 
+        $2^k$ can be used to count how many different ways we can put $k$ elements into $A$ or $B$ (but not both).
+        This is because for each of the $k$ elements, there are $2$ choices. The multiplication principle
+        says that each diverging choice should be multiplied to count the total number of variations.
+        In symbols, this is $\displaystyle \sum_{k=0}^n2^k{n\choose k}$. 
 
         \phantom{ }
 
-        \noindent Now, this is actually really what we're doing on the left side. For each element
-        it is either being picked to be placed in subset $A$ or $B$, or it is being left out of both.
-        This left out of both can simply be subset $C$. $A \cup B \cup C$ contain all elements, and
-        $A \cap B = \varnothing$, $B \cap C = \varnothing$, $A \cap C = \varnothing$. This is
-        exactly what we are doing on the right side. 
+        \noindent Another way we can count this is by saying that there are
+        really $3$ disjoint (and exhaustive) subsets. $A$, $B$, and $S - (A \cup
+        B)$. Because they are all disjoint and all subsets, we can count the
+        number of unique combinations of $A$ and $B$ by using the multiplication
+        principle again. For each element in $S$, we have $3$ choices, to place
+        it in $A$, $B$, or neither. In symbols, this is $3^n$. 
+
+        \phantom{ }
+
+        \noindent It has been shown that you can count the same set of combinations of $A$ and $B$
+        two different ways. Thus, $\displaystyle \sum_{k=0}^n2^k{n\choose k} = 3^n$
     \end{adjustwidth}
 
     \phantom{ }
