@@ -59,7 +59,7 @@
 \headheight=14pt
 \pagestyle{fancy}
 \lhead{\emph{\textcolor{Gray}{Chapter 3 Bonus Homework}}}			%%  UPDATE THE VERSION HERE!!!
-\rhead{\emph{\textcolor{Gray}{student-name}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
 \chead{\emph{\textcolor{Gray}{MATH 309}}}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.35pt}
@@ -112,7 +112,18 @@
 \end{problem}
 
 \begin{soln}
+    \phantom{ }
 
+    \begin{enumerate}
+        \item $\displaystyle\prod_{i=1}^{10}{2\cdot i \choose 2} = 3628800$
+        
+        \phantom{ }
+        
+        \item $\text{all possibilities} - (\text{no cord diameters} + \text{exacty one cord diameters})$
+        
+		\noindent $\displaystyle\prod_{i=1}^{10}{2\cdot i \choose 2} - ({20 \choose 1}{18 \choose 1})
+		$
+    \end{enumerate}
 \end{soln}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,8 +132,42 @@
 \end{problem}
 
 \begin{soln}
+    \phantom{ }
 
+    \noindent There are $6$ different placements of \verb|10001| with two positions
+    that risk double count. We can fill the rest. $6 \cdot 2^5$ is the result
+    before accounting for doubly count strings.
+
+    \noindent It can be seen that \verb|1000110001| is the only string that will be counted
+	twice and it happens in position $1$ and $6$.
+
+    \noindent Thus, $6 \cdot 5^2 - 1$. 
+
+	THIS IS WRONG, you can double count when \verb|100010001?|
 \end{soln}
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
 	Let $X=\{1,2,3,\ldots,n\}$.
