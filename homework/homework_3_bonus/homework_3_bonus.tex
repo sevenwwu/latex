@@ -1,0 +1,224 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      IGNORE THIS FIRST PART        %%%%%%%%%%   EXCEPT TO ENTER/DELETE YOUR NAME WHERE INDICATED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{amsart}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{setspace}
+\newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+
+\newcounter{problem_number}[section]
+\newcommand{\num}{\refstepcounter{problem_number}\arabic{problem_number}}
+\newcommand{\numlabel}[1]{\refstepcounter{problem_number}\label{#1}\arabic{problem_number}}
+
+\newtheorem*{theorem}{Theorem}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+\newenvironment{prf}
+{\medskip\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Proof]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}\medskip}
+
+\newenvironment{soln}
+{\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Solution]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+
+\setenumerate[1]{label=(\roman*)}
+
+\newcommand{\jeff}[1]{\textbf{\textcolor{WildStrawberry}{#1}}}
+\newcommand{\student}[1]{\textbf{\textcolor{Orange}{#1}}}
+\newcommand{\peer}[1]{\textbf{\textcolor{ForestGreen}{#1}}}
+
+\textwidth=6.5in
+\hoffset-.75in
+\textheight=9in
+\voffset-.75in
+\footskip=30pt
+\headheight=14pt
+\pagestyle{fancy}
+\lhead{\emph{\textcolor{Gray}{Chapter 3 Bonus Homework}}}			%%  UPDATE THE VERSION HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\chead{\emph{\textcolor{Gray}{MATH 309}}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\thispagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       ADD CUSTOM COMMANDS HERE     %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\RP}{\mathbb{RP}}
+
+\newcommand{\Ff}{\mathcal F}
+\newcommand{\Ll}{\mathcal L}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\Rr}{\mathcal R}
+
+\newcommand{\Line}[1]{\overleftrightarrow{#1}}
+\newcommand{\Ray}[1]{\overrightarrow{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       NOW THE DOCUMENT BEGINS      %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	Let $\mathcal C$ be the unit circle, and let $A$ be a collection of 20 evenly spaced points on $\mathcal C$.
+	A straight segment connecting two points of $A$ is called a \emph{chord}.
+	How many ways are there to draw 10 chords hitting all 20 points of $A$?
+\end{problem}
+
+\begin{soln}
+    \phantom{ }
+
+	Two different approaches:
+
+	\begin{itemize}
+		\item Pick between the $\displaystyle {20 \choose 2}$ options,
+		then pick between the $\displaystyle {18 \choose 2}$ options, \dots etc.
+		Then because it didn't matter in what order you selected the $10$ cords, divide
+		by $10!$. 
+		\item Arrange the $20$ points in a list and count the number of
+		permutations. Then conceptualize that their are $10$ pairs in each
+		string. Because a cord is directionless, we need to remove order 
+		from each pair, thus divide by $2!$ $10$ times. Additionally, it doesn't
+		matter in what order the cords appear in. So also divide by $10!$. 
+	\end{itemize}
+
+	$$\displaystyle\prod_{i=1}^{10}{2\cdot i \choose 2} \cdot \frac{1}{10!} = 
+	\frac{20!}{2!^{10}\cdot10!}= 654,729,075$$
+
+\end{soln}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	How many binary strings of length 10 contain somewhere within them the string \verb|10001|?
+\end{problem}
+
+\begin{soln}
+    \phantom{ }
+
+    \noindent There are $6$ different placements of \verb|10001| with four
+    positions that risk double count. We can count this by placing \verb|10001|
+    in each of the six positions and then fill the rest. Thus, $6 \cdot 2^5$ is
+    the result before accounting for doubly count strings.
+
+    \noindent Now, there are four positions where we double count:
+
+	A = \verb|10001?????|
+
+	B = \verb|?????10001|
+	
+	C = \verb|?10001????|
+
+	D = \verb|????10001?|
+
+	\noindent I will list only the non-zero intersections for brevity:
+
+	$|A \cap B| = 1 \implies \verb|1000110001|$
+	
+	$|A \cap D| = 2 \implies \verb|100010001?|$
+
+	$|B \cap C| = 2 \implies  \verb|?100010001|$
+
+    \noindent Thus, $6 \cdot 2^5 - 2 - 2 - 1 = 187$. 
+
+\end{soln}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	Let $X=\{1,2,3,\ldots,n\}$.
+	\begin{enumerate}
+		\item Determine the cardinality of the set 
+		$$Z_k = \{A\in\mathscr{P}(X)\colon |A|=k\}$$
+		for $0\leq k\leq n$.
+	\item Find a combinatorial proof showing that $\displaystyle\sum_{k=0}^nk\binom{n}{k} = n2^{n-1}$.
+
+	\textbf{Hint:} The parts of this problem are related.
+	\end{enumerate}
+\end{problem}
+
+\begin{soln}
+	\phantom{ }
+
+	\begin{enumerate}
+		\item The powers set contains all $k$-combinations of some set
+		where $0 \leq k \leq n$. The indexed set builder is simply picking 
+		only subsets of $X$ of a particular $k$. The number of $k$-combinations
+		can be expressed as ``$n$ pick $k$''.
+
+		\noindent Thus, $\displaystyle |Z_k| = {n \choose k}$.
+		
+		\phantom{ }
+
+		\item Suppose we have sets $A$ and $B$, where $A \subseteq B
+		\subseteq X$ and $|A| = 1$. ($X$ is already defined above.)
+		How many different ways combinations of $A$ and $B$ are there
+		for some $X$?
+
+		\phantom{ }
+
+		\noindent One way we can count this is by summing the count for
+		each cardinality of $B$ (which can be between $0$ and $n$) where we pick one element from $B$ and put into
+		$A$. This consists of picking $|B|$ elements from $X$ and $1$ element from $B$.
+		In symbols, this is 
+		$\displaystyle \sum_{k=0}^n{n \choose k}{k\choose 1} = \sum_{k=0}^nk{n \choose k}$.
+
+		\phantom{ }
+
+		\noindent Another way we can count this is by first picking $1$ element from
+		$X$ to fill $A$, then fill $B$ with the remaining $n-1$ elements. Now for
+		each of these $n-1$ elements, we have a $2$ choices: either put into $B$
+		or leave out of $B$. To account for every possibility, we can use the multiplication
+		principle. In symbols this is $\displaystyle n2^{n-1}$.
+
+		\phantom{ }
+
+		\noindent We have counted the same set two different ways which 
+		shows that their related expressions are equivalent. Thus,
+		$\displaystyle\sum_{k=0}^nk{n \choose k} = \displaystyle n2^{n-1}$. 
+
+	\end{enumerate}
+
+\end{soln}
+
+\end{document}
