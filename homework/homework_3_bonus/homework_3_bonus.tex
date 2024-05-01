@@ -108,16 +108,23 @@
 \begin{soln}
     \phantom{ }
 
-    \begin{enumerate}
-        \item $\displaystyle\prod_{i=1}^{10}{2\cdot i \choose 2} = 3628800$
-        
-        \phantom{ }
-        
-        \item $\text{all possibilities} - (\text{no cord diameters} + \text{exacty one cord diameters})$
-        
-		\noindent $\displaystyle\prod_{i=1}^{10}{2\cdot i \choose 2} - ({20 \choose 1}{18 \choose 1})
-		$
-    \end{enumerate}
+	Two different approaches:
+
+	\begin{itemize}
+		\item Pick between the $\displaystyle {20 \choose 2}$ options,
+		then pick between the $\displaystyle {18 \choose 2}$ options, \dots etc.
+		Then because it didn't matter in what order you selected the $10$ cords, divide
+		by $10!$. 
+		\item Arrange the $20$ points in a list and count the number of
+		permutations. Then conceptualize that their are $10$ pairs in each
+		string. Because a cord is directionless, we need to remove order 
+		from each pair, thus divide by $2!$ $10$ times. Additionally, it doesn't
+		matter in what order the cords appear in. So also divide by $10!$. 
+	\end{itemize}
+
+	$$\displaystyle\prod_{i=1}^{10}{2\cdot i \choose 2} \cdot \frac{1}{10!} = 
+	\frac{20!}{2!^{10}\cdot10!}= 654,729,075$$
+
 \end{soln}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,39 +135,34 @@
 \begin{soln}
     \phantom{ }
 
-    \noindent There are $6$ different placements of \verb|10001| with two positions
-    that risk double count. We can fill the rest. $6 \cdot 2^5$ is the result
-    before accounting for doubly count strings.
+    \noindent There are $6$ different placements of \verb|10001| with four
+    positions that risk double count. We can count this by placing \verb|10001|
+    in each of the six positions and then fill the rest. Thus, $6 \cdot 2^5$ is
+    the result before accounting for doubly count strings.
 
-    \noindent It can be seen that \verb|1000110001| is the only string that will be counted
-	twice and it happens in position $1$ and $6$.
+    \noindent Now, there are four positions where we double count:
 
-    \noindent Thus, $6 \cdot 5^2 - 1$. 
+	A = \verb|10001?????|
 
-	THIS IS WRONG, you can double count when \verb|100010001?|
+	B = \verb|?????10001|
+	
+	C = \verb|?10001????|
+
+	D = \verb|????10001?|
+
+	\noindent I will list only the non-zero intersections for brevity:
+
+	$|A \cap B| = 1 \implies \verb|1000110001|$
+	
+	$|A \cap D| = 2 \implies \verb|100010001?|$
+
+	$|B \cap C| = 2 \implies  \verb|?100010001|$
+
+    \noindent Thus, $6 \cdot 2^5 - 2 - 2 - 1 = 187$. 
+
 \end{soln}
 
-\phantom{ }
 
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
@@ -176,6 +178,46 @@
 \end{problem}
 
 \begin{soln}
+	\phantom{ }
+
+	\begin{enumerate}
+		\item The powers set contains all $k$-combinations of some set
+		where $0 \leq k \leq n$. The indexed set builder is simply picking 
+		only subsets of $X$ of a particular $k$. The number of $k$-combinations
+		can be expressed as ``$n$ pick $k$''.
+
+		\noindent Thus, $\displaystyle |Z_k| = {n \choose k}$.
+		
+		\phantom{ }
+
+		\item Suppose we have sets $A$ and $B$, where $A \subseteq B
+		\subseteq X$ and $|A| = 1$. ($X$ is already defined above.)
+		How many different ways combinations of $A$ and $B$ are there
+		for some $X$?
+
+		\phantom{ }
+
+		\noindent One way we can count this is by summing the count for
+		each cardinality of $B$ (which can be between $0$ and $n$) where we pick one element from $B$ and put into
+		$A$. This consists of picking $|B|$ elements from $X$ and $1$ element from $B$.
+		In symbols, this is 
+		$\displaystyle \sum_{k=0}^n{n \choose k}{k\choose 1} = \sum_{k=0}^nk{n \choose k}$.
+
+		\phantom{ }
+
+		\noindent Another way we can count this is by first picking $1$ element from
+		$X$ to fill $A$, then fill $B$ with the remaining $n-1$ elements. Now for
+		each of these $n-1$ elements, we have a $2$ choices: either put into $B$
+		or leave out of $B$. To account for every possibility, we can use the multiplication
+		principle. In symbols this is $\displaystyle n2^{n-1}$.
+
+		\phantom{ }
+
+		\noindent We have counted the same set two different ways which 
+		shows that their related expressions are equivalent. Thus,
+		$\displaystyle\sum_{k=0}^nk{n \choose k} = \displaystyle n2^{n-1}$. 
+
+	\end{enumerate}
 
 \end{soln}
 
