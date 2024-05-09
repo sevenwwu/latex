@@ -63,7 +63,7 @@
 \headheight=14pt
 \pagestyle{fancy}
 \lhead{\emph{\textcolor{Gray}{Homework \#7}}}			%%  UPDATE THE VERSION HERE!!!
-\rhead{\emph{\textcolor{Gray}{student-name}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
 \chead{\emph{\textcolor{Gray}{MATH 309}}}
 \cfoot{\thepage}
 \renewcommand{\headrulewidth}{0.35pt}
@@ -139,7 +139,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 		
 	% \end{adjustwidth}
 
-	Suppose $a,b,c \in \mathbb Z$ such that $a^2 + b^2 = c^2$ and it's 
+	Suppose $a^2 + b^2 = c^2$ and it's 
 	not the case that $a$ or $b$ is even.
 
 	Therefore, $a$ and $b$ are both odd.
@@ -194,6 +194,25 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{proposition}
 
 \begin{prf}
+	\phantom{ }
+
+	Suppose $x + y$ is even.
+
+	% Observe that $x$ and $y$ either have the same parity or they do not.
+
+	Suppose $x$ and $y$ do not have the same parity.
+
+	Then $x$ is even and $y$ odd without loss of generality.
+
+	So $x = 2a$ and $y = 2b + 1$ for some integers $a$ and $b$.
+
+	The expression $x + y$ becomes $2a + 2b + 1 = 2(a+b) + 1$.
+
+	Therefore $x + y = 2m + 1$ where $m$ is the integer $a+b$.
+
+	So, $x + y$ is odd. But, $x + y$ is even.
+
+	We have arrived at contradiction.
 	
 \end{prf}
 
