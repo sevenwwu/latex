@@ -200,7 +200,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	% Observe that $x$ and $y$ either have the same parity or they do not.
 
-	Suppose $x$ and $y$ do not have the same parity.
+	Assume $x$ and $y$ do not have the same parity.
 
 	Then $x$ is even and $y$ odd without loss of generality.
 
@@ -222,7 +222,19 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{proposition}
 
 \begin{prf}
-		
+	\phantom{ }
+
+	Suppose $a \equiv b (\text{mod } n)$.
+
+	Congruent modulo means two integers share the same remainder
+	when the division algorithm is applied with the same divisor.
+
+	The division algorithm tells us that:
+
+	$a = q_1n + r$ and $b = q_2n + r$, where $q_1, q_2, r \in 
+	\mathbb Z$ and $0 \leq r < n$. 
+
+	For all $x$ where $x|a$
 \end{prf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
