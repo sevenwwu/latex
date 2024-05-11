@@ -176,7 +176,9 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 		Simplifying the expression shows that $2k = 2j + 1$ for integers $k$ and $j$.
 
-		Therefore, an even number equals an odd number. We have arrived at contradiction.
+		Therefore, an even number equals an odd number. 
+		
+		We have arrived at contradiction.
 	\end{adjustwidth}
 \end{prf}
 
@@ -196,11 +198,9 @@ Prove the following propositions. Format your proof so each step of the proof is
 \begin{prf}
 	\phantom{ }
 
-	Suppose $x + y$ is even.
-
 	% Observe that $x$ and $y$ either have the same parity or they do not.
 
-	Assume $x$ and $y$ do not have the same parity.
+	Suppose $x$ and $y$ do not have the same parity.
 
 	Then $x$ is even and $y$ odd without loss of generality.
 
@@ -210,10 +210,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	Therefore $x + y = 2m + 1$ where $m$ is the integer $a+b$.
 
-	So, $x + y$ is odd. But, $x + y$ is even.
-
-	We have arrived at contradiction.
-	
+	So, $x + y$ is odd.
 \end{prf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -226,15 +223,56 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	Suppose $a \equiv b (\text{mod } n)$.
 
-	Congruent modulo means two integers share the same remainder
-	when the division algorithm is applied with the same divisor.
+	Then $n|(a-b)$.
 
-	The division algorithm tells us that:
+	Then $nx = a-b$ for some integer $x$.
 
-	$a = q_1n + r$ and $b = q_2n + r$, where $q_1, q_2, r \in 
-	\mathbb Z$ and $0 \leq r < n$. 
+	The division algorithm states that:
 
-	For all $x$ where $x|a$
+	$a = nq_1 + r_1$ where $q_1, r_1 \in \mathbb Z$ where $0 \leq r_1 < n$.
+
+	$b = nq_2 + r_2$ where $q_2, r_2 \in \mathbb Z$ where $0 \leq r_2 < n$.
+
+	So, $nx = nq_1 + r_1 - nq_2 - r_2$
+
+	$= n(q_1 - q_2) + r_1 - r_2$
+
+	Observe that $r_1 - r_2$ must be some multiple of $n$ in order for the equality to hold.
+
+	So, $ny = r_1-r_2$.
+
+	However, $-n < r_1 - r_2 < n$, so the only possible multiple is $0$.
+
+	So, $n(0) = 0 = r_1-r_2 \implies r_1 = r_2$.
+
+	Therefore they share the same remainder.
+
+	\phantom{ }
+
+	Moving forward: $r = r_1 = r_2$.
+
+	Continuing, 
+
+	$a = nq_1 + r$
+
+	$b = nq_2 + r$
+
+	$n$ and $r$ may share prime factors, we can factor these out and replace them with their
+	product $p$:
+
+	$a = p(n'q_1+r')$
+
+	$b = p(n'q_2+r')$
+
+	Where $n = n'p$ and $r = r'p$.
+
+	\phantom{ }
+
+	$\text{gcd}(a,n) = \text{ }$greatest $x$ where $x|a$ and $x|n$. 
+
+	$\text{gcd}(b,n) = \text{ }$greatest $x$ where $x|b$ and $x|n$.
+	
+	So, there exists some $x$ and $y$ where $x \neq y$, $x|a$, $x|n$, $y|b$, $y|n$.
 \end{prf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
