@@ -266,13 +266,48 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	Where $n = n'p$ and $r = r'p$.
 
-	\phantom{ }
+	Make note that $p|a$, $p|b$, and $p|n$.
 
-	$\text{gcd}(a,n) = \text{ }$greatest $x$ where $x|a$ and $x|n$. 
+	\textbf{Lemma:} If $n'$ and $r'$ are coprime, then $\text{gcd}(n'q+r',n')
+	= 1$ where $q \in \{q_1,q_2\}$. 
 
-	$\text{gcd}(b,n) = \text{ }$greatest $x$ where $x|b$ and $x|n$.
+	\begin{adjustwidth}{2em}{0em}
+		Suppose $\text{gcd}(n'q+r',n') \neq 1$.
+
+		Then $\text{gcd}(n'q+r',n') > 1$.
+
+		So, $n'q+r'$ and $n'$ share some common divisor $d$.
+
+		It follows that $d|n'q+r'$ and $d|n'$.
+
+		Expanded, this is $dm_1 = n'q+r'$ and $dm_2 = n'$.
+
+		Substituting $n'$, $dm_1 = n'q+r' \implies dm_1 = dm_2q+r'$.
+
+		Isolation $r'$, we get $r' = dm_1 - dm_2q \implies r' = d(m_1-m_2q)$.
+
+		Thus, $dm_3 = r'$ where $m_3$ is the integer $m_1-m_2q$.
+
+		So, $d|r'$. 
+
+		Because $d|r'$ and $d|n'$ for some $d > 0$. $r'$ and $n'$ cannot
+		be coprime.
+	\end{adjustwidth}
+
+	Therefore, $\text{gcd}(n'q+r',n') = 1$ where $q$ equals $q_1$ 
+	or $q_2$, because $n'$ and $r'$ are coprime. 
+
+	Because $n'q+r'$ and $n'$ share no more common factors and
+	$p(n'q+r')$ is equal to $a$ or $b$, $\text{gcd}(a,n) = p$ and
+	$\text{gcd}(b,n) = p$.
+
+	So $\text{gcd}(a,n) = \text{gcd}(b,n)$. 
+
+	% $\text{gcd}(a,n) = \text{ }$greatest $x$ where $x|a$ and $x|n$. 
+
+	% $\text{gcd}(b,n) = \text{ }$greatest $x$ where $x|b$ and $x|n$.
 	
-	So, there exists some $x$ and $y$ where $x \neq y$, $x|a$, $x|n$, $y|b$, $y|n$.
+	% So, there exists some $x$ and $y$ where $x \neq y$, $x|a$, $x|n$, $y|b$, $y|n$.
 \end{prf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
