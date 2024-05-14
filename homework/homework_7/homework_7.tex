@@ -138,7 +138,8 @@ Prove the following propositions. Format your proof so each step of the proof is
 	% 	\end{adjustwidth}
 		
 	% \end{adjustwidth}
-
+	Let $a,b,c \in \mathbb Z$. 
+	
 	Suppose $a^2 + b^2 = c^2$ and it's 
 	not the case that $a$ or $b$ is even.
 
@@ -150,7 +151,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	\textbf{Case 1:} $c$ is even.
 	\begin{adjustwidth}{2em}{0em} 
-		Then $c = 2z$ for some integer $x$.
+		Then $c = 2z$ for some integer $z$.
 
 		The expression $a^2 + b^2 = c^2$ becomes $(2x + 1)^2 + (2y+1)^2 = 4z^2$.
 
@@ -161,7 +162,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 		Simplifying the expression shows $4k + 2 = 4j$ where $k$ and $j$ are
 		the integers $x^2+y^2+x+y$ and $4z^2$ respectfully. 
 
-		Observe that $2 = 4(k - j)$, thus $4|2$.
+		Observe that $2 = 4(k - j) \implies 2 = 4l$ where $l$ is the integer $k-j$, thus $4|2$.
 		
 		We have arrived at contradiction.
 	\end{adjustwidth}
@@ -198,9 +199,11 @@ Prove the following propositions. Format your proof so each step of the proof is
 \begin{prf}
 	\phantom{ }
 
-	% Observe that $x$ and $y$ either have the same parity or they do not.
-
+	Let $x,y \in \mathbb Z$.
+	
 	Suppose $x$ and $y$ do not have the same parity.
+
+	% Observe that $x$ and $y$ either have the same parity or they do not.
 
 	Then $x$ is even and $y$ odd without loss of generality.
 
@@ -221,6 +224,8 @@ Prove the following propositions. Format your proof so each step of the proof is
 \begin{prf}
 	\phantom{ }
 
+	Let $a,b \in \mathbb Z$ and $n \in \mathbb N$. 
+
 	Suppose $a \equiv b (\text{mod } n)$.
 
 	Then $n|(a-b)$.
@@ -229,13 +234,15 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	The division algorithm states that:
 
-	$a = nq_1 + r_1$ where $q_1, r_1 \in \mathbb Z$ where $0 \leq r_1 < n$.
+	\begin{adjustwidth}{2em}{0em}
+		$a = nq_1 + r_1$ where $q_1, r_1 \in \mathbb Z$ where $0 \leq r_1 < n$.
 
-	$b = nq_2 + r_2$ where $q_2, r_2 \in \mathbb Z$ where $0 \leq r_2 < n$.
+		$b = nq_2 + r_2$ where $q_2, r_2 \in \mathbb Z$ where $0 \leq r_2 < n$.
+	\end{adjustwidth}
 
 	So, $nx = nq_1 + r_1 - nq_2 - r_2$
 
-	$= n(q_1 - q_2) + r_1 - r_2$
+	\hspace{3.15em}$= n(q_1 - q_2) + r_1 - r_2$
 
 	Observe that $r_1 - r_2$ must be some multiple of $n$ in order for the equality to hold.
 
@@ -245,64 +252,61 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	So, $n(0) = 0 = r_1-r_2 \implies r_1 = r_2$.
 
-	Therefore they share the same remainder.
+	Therefore they share the same remainder. Moving forward: Let $r = r_1 = r_2$.
 
-	\phantom{ }
+	If $r = 0$, then both $a$ and $b$ are multiples of $n$. So the greatest shared divisor
+	between $a$ and $n$ and between $b$ and $n$ will simply be $n$ itself. 
 
-	Moving forward: $r = r_1 = r_2$.
+	So, $\text{gcd}(a,n) = \text{gcd}(b,n)$ when $r = 0$. 
 
-	Continuing, 
-
-	$a = nq_1 + r$
-
-	$b = nq_2 + r$
-
-	$n$ and $r$ may share prime factors, we can factor these out and replace them with their
-	product $p$:
-
-	$a = p(n'q_1+r')$
-
-	$b = p(n'q_2+r')$
-
-	Where $n = n'p$ and $r = r'p$.
-
-	Make note that $p|a$, $p|b$, and $p|n$.
-
-	\textbf{Lemma:} If $n'$ and $r'$ are coprime, then $\text{gcd}(n'q+r',n')
-	= 1$ where $q \in \{q_1,q_2\}$. 
-
+	If $r \neq 0$, then $n$ and $r$ may share prime factors, we can factor these out and 
+	replace them with their product $p$:
 	\begin{adjustwidth}{2em}{0em}
-		Suppose $\text{gcd}(n'q+r',n') \neq 1$.
+		$a = p(n'q_1+r')$
 
-		Then $\text{gcd}(n'q+r',n') > 1$.
+		$b = p(n'q_2+r')$
+	\end{adjustwidth}
 
-		So, $n'q+r'$ and $n'$ share some common divisor $d$.
+	Where $n = pn'$ and $r = pr'$.
 
-		It follows that $d|n'q+r'$ and $d|n'$.
+	\textbf{Lemma:} Let $\alpha, \beta \in \mathbb N$, $x \in \mathbb Z$. If $\alpha$ and $\beta$ are 
+	coprime, then $\text{gcd}(\alpha x+\beta,\alpha) = 1$.
 
-		Expanded, this is $dm_1 = n'q+r'$ and $dm_2 = n'$.
+	\begin{adjustwidth}{2em}{0em}		
+		Suppose $\text{gcd}(\alpha x+\beta ,\alpha) \neq 1$.
 
-		Substituting $n'$, $dm_1 = n'q+r' \implies dm_1 = dm_2q+r'$.
+		Then $\text{gcd}(\alpha +\beta ,\alpha) > 1$.
 
-		Isolation $r'$, we get $r' = dm_1 - dm_2q \implies r' = d(m_1-m_2q)$.
+		So, $\alpha x+\beta $ and $\alpha$ share some common divisor $d$.
 
-		Thus, $dm_3 = r'$ where $m_3$ is the integer $m_1-m_2q$.
+		It follows that $d|\alpha x+\beta $ and $d|\alpha$.
 
-		So, $d|r'$. 
+		Expanded, this is $dm_1 = \alpha x +\beta $ and $dm_2 = \alpha$.
 
-		Because $d|r'$ and $d|n'$ for some $d > 0$. $r'$ and $n'$ cannot
+		Substituting $\alpha$, $dm_1 = \alpha x+\beta  \implies dm_1 = dm_2x+\beta $.
+
+		Isolation $\beta $, we get $\beta  = dm_1 - dm_2x \implies \beta  = d(m_1-m_2x)$.
+
+		Thus, $dm_3 = \beta $ where $m_3$ is the integer $m_1-m_2x$.
+
+		So, $d|\beta $. 
+
+		Because $d|\beta $ and $d|\alpha$ for some $d > 0$, $\beta$ and $\alpha$ cannot
 		be coprime.
 	\end{adjustwidth}
 
-	Therefore, $\text{gcd}(n'q+r',n') = 1$ where $q$ equals $q_1$ 
-	or $q_2$, because $n'$ and $r'$ are coprime. 
+	So, $\text{gcd}(n'q+r',n') = 1$ when $q \in \{q_1,q_2\}$, because $n'$ and $r'$ are coprime. 
 
-	Because $n'q+r'$ and $n'$ share no more common factors and
-	$p(n'q+r')$ is equal to $a$ or $b$, $\text{gcd}(a,n) = p$ and
-	$\text{gcd}(b,n) = p$.
+	So, $n'q+r'$ and $n'$ share no prime factors.
 
-	So $\text{gcd}(a,n) = \text{gcd}(b,n)$. 
+	Since $a = p(n'q_1+r')$, 
+	$n = pn'$, and $n'q_1+r'$ and $n'$ share no more common factors, it follows that 
+	$\text{gcd}(a,n) = p$.
 
+	Similarly, since $b = p(n'q_2+r')$, $n = pn'$, and $n'q_2+r'$ and $n'$ 
+	share no more common factors, it follows that $\text{gcd}(b,n) = p$.
+
+	So, $\text{gcd}(a,n) = \text{gcd}(b,n)$ when $r \neq 0$. 
 	% $\text{gcd}(a,n) = \text{ }$greatest $x$ where $x|a$ and $x|n$. 
 
 	% $\text{gcd}(b,n) = \text{ }$greatest $x$ where $x|b$ and $x|n$.
