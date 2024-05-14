@@ -18,6 +18,10 @@
 \usepackage[framemethod=default]{mdframed}
 \usepackage{framed}
 \usepackage{setspace}
+\usepackage{changepage}
+
+\setlength{\parindent}{0pt}
+
 \newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
@@ -105,7 +109,20 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{proposition}
 
 \begin{prf}
+	\phantom{ }
+
+	Suppose $p\nmid a$ and $p \nmid b$.
+
+	Then $p$ is not a prime factor of $a$ or $b$.
+
+	$ab$ is simply adding the multiplicities of each prime factor
+	of $a$ and of $b$ together. 
 	
+	$p$'s multiplicity in $a$ is $0$, same with $b$. 
+	
+	Because $0 + 0 = 0$, $p$'s multiplicity in $ab$ is $0$.
+
+	So, $p \nmid ab$. 
 \end{prf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,9 +132,38 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{proposition}
 
 \begin{prf}
+	\phantom{ }
+
+	Suppose $A$, $B$, and $C$ are sets.
+
+	Consider the following sequence of equalities:
+
+	\begin{adjustwidth}{2em}{0em}
+		$A \cup (B \cap C) = \{x : (x \in A) \cup (B \cap C)\}$ \hfill (definition of set)
+
+		$=\{x : (x \in A)\} \cup \{x: x \in B \land x \in C\}$ \hfill (definition of intersection)
+
+		$=\{x : (x \in A) \lor (x \in B \land x \in C)\}$ \hfill (definition of union)
+
+		$=\{x : (x \in A \lor x \in B) \land (x \in A \lor x \in C)\}$ \hfill (logical `or' distributive property)
 	
+		$=\{x : (x \in A \lor x \in B)\} \cap \{x: (x \in A \lor x \in C)\}$ \hfill (definition of intersection)
+		
+		$=(A \cup B) \cap \{x: (x \in A \lor x \in C)\}$ \hfill (definition of union)
+
+		$=(A \cup B) \cap (A \cup C)$ \hfill (definition of union)
+	
+	\end{adjustwidth}
+
 \end{prf}
 
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
+
+\phantom{ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
 	Determine whether the following statement is true.
@@ -128,7 +174,17 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{problem}
 
 \begin{soln}
-		
+	\phantom{ }
+
+	Suppose $A = \{1\}$, $B = \{2\}$, and $X = \{1,2\}$.
+
+	Then $A \cup B = \{1, 2\}$.
+
+	So, $X = A \cup B$.
+
+	Thus, $X \subseteq A \cup B$.
+
+	But also, $X \nsubseteq A$ and $X \nsubseteq B$.
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
