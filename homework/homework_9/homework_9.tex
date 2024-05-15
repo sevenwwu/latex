@@ -18,6 +18,10 @@
 \usepackage[framemethod=default]{mdframed}
 \usepackage{framed}
 \usepackage{setspace}
+\usepackage{changepage}
+
+\setlength{\parindent}{0pt}
+
 \newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
@@ -105,7 +109,59 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{proposition}
 
 \begin{prf}
-	
+	\phantom{ }
+
+	Suppose $n \in \mathbb N$.
+
+	\textbf{Basis Step:} $n = 1$
+	\begin{adjustwidth}{2em}{0em}
+		$\displaystyle\frac{1}{2!} = 1 - \frac{1}{(1)+1}$.
+
+		\hspace*{1.3em}$\displaystyle = \frac{1}{2!}$ \hspace*{1em}\checkmark True
+	\end{adjustwidth}
+
+	\phantom{ }
+
+	\textbf{Inductive Step:} $n = k + 1$
+	\begin{adjustwidth}{2em}{0em}
+		Assume $\displaystyle \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{k}{(k+1)!} = 1 - \frac{1}{(k+1)!}$.
+		
+		Show that: 
+
+		$\displaystyle 1 - \frac{1}{((k+1)+1)!} = \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{(k+1)}{((k+1)+1)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{k}{(k+1)!} +\frac{(k+1)}{((k+1)+1)!}$
+		
+		\vspace*{0.5em}
+		
+		\hspace*{8.105em}$\displaystyle = (1 - \frac{1}{(k+1)!}) +\frac{(k+1)}{((k+1)+1)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = (1 - \frac{1}{(k+1)!}) +\frac{(k+1)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 + (- \frac{1}{(k+1)!} \cdot \frac{k+2}{k+2}) +\frac{(k+1)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 + (- \frac{k+2}{(k+2)!}) +\frac{(k+1)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 + \frac{(k+1) - (k+2)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 - \frac{1}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 - \frac{1}{((k+1)+1)!}$ \hspace*{1em}\checkmark True
+	\end{adjustwidth}
 \end{prf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
