@@ -120,7 +120,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 		\hspace*{1.3em}$\displaystyle = \frac{1}{2!}$ \hspace*{1em}\checkmark True
 	\end{adjustwidth}
 
-	\phantom{ }
+	\vspace*{0.5em}
 
 	\textbf{Inductive Step:} $n = k + 1$
 	\begin{adjustwidth}{2em}{0em}
@@ -172,7 +172,55 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{problem}
 
 \begin{soln}
-	
+	\phantom{ }
+
+	\textbf{Proposition: } The number of breaks required is $nm - 1$. 
+
+	Suppose $n,m \in \mathbb N$.
+
+	\textbf{Basis Step:} $n = 1$
+	\begin{adjustwidth}{2em}{0em}
+		\textbf{Basis Step:} $m = 1$
+		\begin{adjustwidth}{2em}{0em}
+			The number of breaks required for an $1 \times 1$ square is trivially $0$ breaks.
+
+			This is equal to $nm - 1 = (1)(1) - 1 = 0$. 
+		\end{adjustwidth}
+
+		\textbf{Inductive Step:} $m = k + 1$
+		\begin{adjustwidth}{2em}{0em}
+			Assume, for $m = k$, $nm - 1 = k - 1$ is the required number of breaks. 
+
+			Show $nm - 1$ is the required number of breaks for $m = k + 1$.
+
+			Suppose we have already performed the breaking for the first $k - 1$
+			breaks. 
+			
+			At this point, when $m = k$, all the unit squares are separated. However
+			$m = k + 1$, so we have one more unit square than previously. This means
+			there is a unit square pair that has yet to be separated. So exactly $1$
+			more split should occur.
+
+			This is $(k - 1) + 1$ splits.
+
+			$(k - 1) + 1 \implies n(k + 1) - 1$.
+		\end{adjustwidth}
+
+		So, when $n = 1$, $nm - 1$ is the number of splits required. 
+	\end{adjustwidth}
+
+	\textbf{Inductive Step:} $n = k + 1$
+	\begin{adjustwidth}{2em}{0em}
+		Assume, for $n = k$, $nm - 1 = km - 1$ is the required number of breaks.
+		
+		Show that $nm - 1$ is the required number of breaks for $n = k + 1$.
+
+		Suppose we have already performed the break for the first $km - 1$ breaks. 
+
+		At this point, when $n = k$, all the unit squares are separated. However
+		$n = k + 1$, so we have $m$ more unit squares (because it's a $n \times m$
+		rectangle). This will be bound in a line 
+	\end{adjustwidth}
 \end{soln}
 
 
