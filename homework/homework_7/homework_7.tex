@@ -232,42 +232,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	Then $nx = a-b$ for some integer $x$.
 
-	The division algorithm states that:
-
-	\begin{adjustwidth}{2em}{0em}
-		$a = nq_1 + r_1$ where $q_1, r_1 \in \mathbb Z$ where $0 \leq r_1 < n$.
-
-		$b = nq_2 + r_2$ where $q_2, r_2 \in \mathbb Z$ where $0 \leq r_2 < n$.
-	\end{adjustwidth}
-
-	So, $nx = nq_1 + r_1 - nq_2 - r_2$
-
-	\hspace{3.15em}$= n(q_1 - q_2) + r_1 - r_2$
-
-	Observe that $r_1 - r_2$ must be some multiple of $n$ in order for the equality to hold.
-
-	So, $ny = r_1-r_2$.
-
-	However, $-n < r_1 - r_2 < n$, so the only possible multiple is $0$.
-
-	So, $n(0) = 0 = r_1-r_2 \implies r_1 = r_2$.
-
-	Therefore they share the same remainder. Moving forward: Let $r = r_1 = r_2$.
-
-	If $r = 0$, then both $a$ and $b$ are multiples of $n$. So the greatest shared divisor
-	between $a$ and $n$ and between $b$ and $n$ will simply be $n$ itself. 
-
-	So, $\text{gcd}(a,n) = \text{gcd}(b,n)$ when $r = 0$. 
-
-	If $r \neq 0$, then $n$ and $r$ may share prime factors, we can factor these out and 
-	replace them with their product $p$:
-	\begin{adjustwidth}{2em}{0em}
-		$a = p(n'q_1+r')$
-
-		$b = p(n'q_2+r')$
-	\end{adjustwidth}
-
-	Where $n = pn'$ and $r = pr'$.
+	So $a = nx + b$.
 
 	\textbf{Lemma:} Let $\alpha, \beta \in \mathbb N$, $x \in \mathbb Z$. If $\alpha$ and $\beta$ are 
 	coprime, then $\text{gcd}(\alpha x+\beta,\alpha) = 1$.
@@ -295,18 +260,74 @@ Prove the following propositions. Format your proof so each step of the proof is
 		be coprime.
 	\end{adjustwidth}
 
-	So, $\text{gcd}(n'q+r',n') = 1$ when $q \in \{q_1,q_2\}$, because $n'$ and $r'$ are coprime. 
+	\textbf{Case 1:} $\text{gcd}(a,n) = 1$
+	\begin{adjustwidth}{2em}{0em}
 
-	So, $n'q+r'$ and $n'$ share no prime factors.
+	\end{adjustwidth}
 
-	Since $a = p(n'q_1+r')$, 
-	$n = pn'$, and $n'q_1+r'$ and $n'$ share no more common factors, it follows that 
-	$\text{gcd}(a,n) = p$.
+	\textbf{Case 2:} $\text{gcd}(a,n) \neq 1$
+	\begin{adjustwidth}{2em}{0em}
+		Then we can invoke the lemma established above.
 
-	Similarly, since $b = p(n'q_2+r')$, $n = pn'$, and $n'q_2+r'$ and $n'$ 
-	share no more common factors, it follows that $\text{gcd}(b,n) = p$.
+		Because $\text{gcd}(nx+b,n) \neq 1$, $n$ and $b$ are not coprime. 
 
-	So, $\text{gcd}(a,n) = \text{gcd}(b,n)$ when $r \neq 0$. 
+		So there is some $d_1$ that $d_1|n$ and $d_1|b$.
+
+		Additionally, because $\text{gcd}(a,n) \neq 1$, 
+		there is some $d_2$ that $d_2|a$ and $d_2|n$. 
+	\end{adjustwidth}
+
+	% The division algorithm states that:
+
+	% \begin{adjustwidth}{2em}{0em}
+	% 	$a = nq_1 + r_1$ where $q_1, r_1 \in \mathbb Z$ where $0 \leq r_1 < n$.
+
+	% 	$b = nq_2 + r_2$ where $q_2, r_2 \in \mathbb Z$ where $0 \leq r_2 < n$.
+	% \end{adjustwidth}
+
+	% So, $nx = nq_1 + r_1 - nq_2 - r_2$
+
+	% \hspace{3.15em}$= n(q_1 - q_2) + r_1 - r_2$
+
+	% Observe that $r_1 - r_2$ must be some multiple of $n$ in order for the equality to hold.
+
+	% So, $ny = r_1-r_2$.
+
+	% However, $-n < r_1 - r_2 < n$, so the only possible multiple is $0$.
+
+	% So, $n(0) = 0 = r_1-r_2 \implies r_1 = r_2$.
+
+	% Therefore they share the same remainder. Moving forward: Let $r = r_1 = r_2$.
+
+	% If $r = 0$, then both $a$ and $b$ are multiples of $n$. So the greatest shared divisor
+	% between $a$ and $n$ and between $b$ and $n$ will simply be $n$ itself. 
+
+	% So, $\text{gcd}(a,n) = \text{gcd}(b,n)$ when $r = 0$. 
+
+	% If $r \neq 0$, then $n$ and $r$ may share prime factors, we can factor these out and 
+	% replace them with their product $p$:
+	% \begin{adjustwidth}{2em}{0em}
+	% 	$a = p(n'q_1+r')$
+
+	% 	$b = p(n'q_2+r')$
+	% \end{adjustwidth}
+
+	% Where $n = pn'$ and $r = pr'$.
+
+	%%%%%%%%%%%%%
+
+	% So, $\text{gcd}(n'q+r',n') = 1$ when $q \in \{q_1,q_2\}$, because $n'$ and $r'$ are coprime. 
+
+	% So, $n'q+r'$ and $n'$ share no prime factors.
+
+	% Since $a = p(n'q_1+r')$, 
+	% $n = pn'$, and $n'q_1+r'$ and $n'$ share no more common factors, it follows that 
+	% $\text{gcd}(a,n) = p$.
+
+	% Similarly, since $b = p(n'q_2+r')$, $n = pn'$, and $n'q_2+r'$ and $n'$ 
+	% share no more common factors, it follows that $\text{gcd}(b,n) = p$.
+
+	% So, $\text{gcd}(a,n) = \text{gcd}(b,n)$ when $r \neq 0$. 
 	% $\text{gcd}(a,n) = \text{ }$greatest $x$ where $x|a$ and $x|n$. 
 
 	% $\text{gcd}(b,n) = \text{ }$greatest $x$ where $x|b$ and $x|n$.
