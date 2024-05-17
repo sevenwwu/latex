@@ -111,18 +111,49 @@ Prove the following propositions. Format your proof so each step of the proof is
 \begin{prf}
 	\phantom{ }
 
-	Suppose $p\nmid a$ and $p \nmid b$.
-
-	Then $p$ is not a prime factor of $a$ or $b$.
-
-	$ab$ is simply adding the multiplicities of each prime factor
-	of $a$ and of $b$ together. 
+	Suppose that $p|ab$. 
 	
-	$p$'s multiplicity in $a$ is $0$, same with $b$. 
-	
-	Because $0 + 0 = 0$, $p$'s multiplicity in $ab$ is $0$.
+	Then $px = ab$ for some integer $x$.
 
-	So, $p \nmid ab$. 
+	Then $\text{sign}(a) \text{sign}(p) |p|x = |a|b 
+	\implies |p|y = |a|b$ where $y$ is the integer
+
+	$\text{sign}(a)\text{sign}(p)x$.
+
+	% For the sake simplicity, assume $a$, $b$ and $p$ are positive.
+
+	% We can do this because if an odd number of $a$, $b$, and $p$ are 
+	% negative, you can simply negate the value of $x$ to maintain
+	% the equality. 
+	
+	% Additionally, $p$ is not ever equal to $0$, and if $a = 0$ and $b = 0$, then
+	% it is trivially true that $px = ab$. 
+
+	\textbf{Proposition 7.1:} 
+	\begin{adjustwidth}{2em}{0em}
+		If $a,b \in \mathbb N$, then
+		there exists integers $k$ and $l$ for which $\text{gcd}(
+		a,b) = ak + bl$.
+	\end{adjustwidth} 
+
+	If $a = 0$, then $p|a$. Suppose $a \neq 0$.
+
+	So, $\text{gcd}(|a|,|p|) = |a|k + |p|l$ where $k,l \in \mathbb Z$.
+
+	Additionally, because $p$ is prime, $|a|$ is either a
+	multiple of $|p|$ or only shares the trivial divisor $1$.
+
+	In the first case, $|p|||a| \implies p|a$, so assume $\text{gcd}(|a|,|p|) = 1$.
+
+	Then $|a|k + |p|l = 1$.
+
+	Multiplying by $b$: $|a|bk + b|p|l = b$.
+
+	Subbing in for $|a|b$: $|p|yk + b|p|l = b \implies |p|(xk +pl) = b$.
+
+	So $|p||b$.
+	
+	Therefore $p|b$. 
 \end{prf}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
