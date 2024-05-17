@@ -115,17 +115,10 @@ Prove the following propositions. Format your proof so each step of the proof is
 	
 	Then $px = ab$ for some integer $x$.
 
-	Then $\text{sign}(a) \text{sign}(p) |p|x = |a|b 
-	\implies |p|y = |a|b$ where $y$ is the integer $\text{sign}(a)\text{sign}(p)x$.
-
-	% For the sake simplicity, assume $a$, $b$ and $p$ are positive.
-
-	% We can do this because if an odd number of $a$, $b$, and $p$ are 
-	% negative, you can simply negate the value of $x$ to maintain
-	% the equality. 
+	To make the proposition work with our integers we need to first
+	ensure they are strictly positive. 
 	
-	% Additionally, $p$ is not ever equal to $0$, and if $a = 0$ and $b = 0$, then
-	% it is trivially true that $px = ab$. 
+	So, $|p|y = |a|b$ where $y$ is the integer $\text{sign}(a)\text{sign}(p)x$.
 
 	\textbf{Proposition 7.1:} 
 	\begin{adjustwidth}{2em}{0em}
@@ -134,25 +127,39 @@ Prove the following propositions. Format your proof so each step of the proof is
 		a,b) = ak + bl$.
 	\end{adjustwidth} 
 
-	If $a = 0$, then $p|a$. Suppose $a \neq 0$.
+	\textbf{Case 1: } $p \mid a$
+	\begin{adjustwidth}{2em}{0em}
+		Then we are done. 
+	\end{adjustwidth}
 
-	So, $\text{gcd}(|a|,|p|) = |a|k + |p|l$ where $k,l \in \mathbb Z$.
+	\textbf{Case 2: } $p \nmid a$
+	\begin{adjustwidth}{2em}{0em}
+		Then $a \neq 0$, so $|a|$ is a natural number. 
 
-	Additionally, because $p$ is prime, $|a|$ is either a
-	multiple of $|p|$ or only shares the trivial divisor $1$.
+		So, $\text{gcd}(|a|,|p|) = |a|k + |p|l$ where $k,l \in \mathbb Z$.
+		(by proposition 7.1)
 
-	In the first case, $|p|\mid|a| \implies p \mid a$, so assume $\text{gcd}(|a|,|p|) = 1$.
-
-	Then $|a|k + |p|l = 1$.
-
-	Multiplying by $b$: $|a|bk + b|p|l = b$.
-
-	Subbing in for $|a|b$: $|p|yk + b|p|l = b \implies |p|(xk +pl) = b$.
-
-	So $|p| \mid b$.
+		Additionally, because $p$ is prime, $|a|$ is either a
+		multiple of $|p|$ or only shares the trivial divisor $1$.
+		But, $p \nmid a$.
 	
-	Therefore $p \mid b$. 
+		So assume $\text{gcd}(|a|,|p|) = 1$.
+	
+		Then $1 = |a|k + |p|l$.
+	
+		Multiplying by $b$: $b = |a|bk + b|p|l$.
+	
+		Substituting $|a|b$: $b = |p|yk + b|p|l \implies b = |p|(yk+bl)$.
+	
+		So, $|p| \mid b$.
+
+		Therefore, $p \mid b$. 
+	\end{adjustwidth}
 \end{prf}
+
+\phantom{ }
+
+\phantom{ }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proposition}
@@ -168,7 +175,7 @@ Prove the following propositions. Format your proof so each step of the proof is
 	Consider the following sequence of equalities:
 
 	\begin{adjustwidth}{2em}{0em}
-		$A \cup (B \cap C) = \{x : (x \in A) \cup (B \cap C)\}$ \hfill (definition of set)
+		$A \cup (B \cap C) = \{x : (x \in A)\} \cup (B \cap C)$ \hfill (definition of set)
 
 		$=\{x : (x \in A)\} \cup \{x: x \in B \land x \in C\}$ \hfill (definition of intersection)
 
@@ -186,13 +193,6 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 \end{prf}
 
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
-
-\phantom{ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
 	Determine whether the following statement is true.
