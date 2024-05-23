@@ -178,51 +178,35 @@ Prove the following propositions. Format your proof so each step of the proof is
 
 	Suppose $n,m \in \mathbb N$.
 
-	\textbf{Basis Step:} $n = 1$
+	\textbf{Basis Step:} $n = 1, m = 1$
 	\begin{adjustwidth}{2em}{0em}
-		\textbf{Basis Step:} $m = 1$
-		\begin{adjustwidth}{2em}{0em}
-			The number of breaks required for an $1 \times 1$ square is trivially $0$ breaks.
+		This is $1 \times 1$ unit square, it requires no splits.
 
-			This is equal to $nm - 1 = (1)(1) - 1 = 0$. 
-		\end{adjustwidth}
-
-		\textbf{Inductive Step:} $m = k + 1$
-		\begin{adjustwidth}{2em}{0em}
-			Assume, for $m = k$, $nm - 1 = k - 1$ is the required number of breaks. 
-
-			Show $nm - 1$ is the required number of breaks for $m = k + 1$.
-
-			Suppose we have already performed the breaking for the first $k - 1$
-			breaks. 
-			
-			At this point, when $m = k$, all the unit squares are separated. However
-			$m = k + 1$, so we have one more unit square than previously. This means
-			there is a unit square pair that has yet to be separated. So exactly $1$
-			more split should occur.
-
-			This is $(k - 1) + 1$ splits.
-
-			$(k - 1) + 1 \implies n(k + 1) - 1$.
-		\end{adjustwidth}
-
-		So, when $n = 1$, $nm - 1$ is the number of splits required. 
+		$0 = (1)(1) - 1 \hspace{1em} \checkmark$
 	\end{adjustwidth}
 
-	\textbf{Inductive Step:} $n = k + 1$
+	\textbf{Inductive Step for $n$ (without loss of generality for $m$):}
 	\begin{adjustwidth}{2em}{0em}
-		Assume, for $n = k$, $nm - 1 = km - 1$ is the required number of breaks.
-		
-		Show that $nm - 1$ is the required number of breaks for $n = k + 1$.
+		Assume that $n_km - 1$ is the number of breaks required
+		for a $n_k \times m$ chocolate bar. 
 
-		Suppose we have already performed the break for the first $km - 1$ breaks. 
+		Additionally, assume that $m - 1$ is the number of breaks required
+		for a $1 \times m$ chocolate bar. This is when $n = 1$. 
 
-		At this point, when $n = k$, all the unit squares are separated. However
-		$n = k + 1$, so we have $m$ more unit squares (because it's a $n \times m$
-		rectangle). This will be bound in a line 
+		A chocolate bar of $(n_k + 1) \times m$ size will have an additional
+		row of length $m$.
+
+		If we first split this additional row off, we are left with a
+		$n_k \times m$ piece and a $1 \times m$ piece. 
+
+		These pieces have been assumed to require $n_km - 1$ and $m - 1$ splits
+		respectively.
+
+		This sums to $(1) + (n_km - 1) + (m - 1) \implies (n_k+1)m - 1$.
 	\end{adjustwidth}
 \end{soln}
 
+\vspace*{14em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proposition}
@@ -233,7 +217,50 @@ Prove the following propositions. Format your proof so each step of the proof is
 \end{proposition}
 
 \begin{prf}
-		
+	\phantom{ }
+
+	\textbf{Basis Step:} $n = 2$
+	\begin{adjustwidth}{2em}{0em}
+		$B \cap (A_1 \cup A_2) = \{x : x \in B \land x \in (A_1 \cup A_2)\}$
+
+		$\hspace{6.46em} = \{x : x \in B \land x \in (A_1 \cup A_2)\}$
+
+		$\hspace{6.46em} = \{x : x \in B \land (x \in A_1 \lor x \in A_2)\}$
+
+		$\hspace{6.46em} = \{x : (x \in B \land x \in A_1) \lor (x \in B \land x \in A_2)\}$
+
+		$\hspace{6.46em} = \{x : (x \in B \cap A_1) \lor (x \in B \cap A_2)\}$
+
+		$\hspace{6.46em} = (B \cap A_1) \cup (B \cap A_2)$
+	\end{adjustwidth}
+
+	\textbf{Inductive Step:} $n = k + 1$
+	\begin{adjustwidth}{2em}{0em}
+		Assume that $B\cap(A_1\cup A_2\cup \cdots\cup A_k) = (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k)$.
+
+		\phantom{ }
+
+		$B\cap(A_1\cup A_2\cup \cdots\cup A_{k+1}) =$
+
+		$\hspace{6em}= \{x : x \in B \land x \in (A_1\cup A_2\cup \cdots\cup A_{k+1})\}$
+
+		$\hspace{6em}= \{x : x \in B \land x \in (A_1\cup \cdots\cup A_k \cup A_{k+1})\}$
+
+		$\hspace{6em}= \{x : x \in B \land (x \in (A_1\cup \cdots\cup A_k) \lor x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in B \land x \in (A_1\cup \cdots\cup A_k)) \lor (x \in B \land x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in (B \cap (A_1\cup \cdots\cup A_k))) \lor (x \in B \land x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k)) \lor (x \in B \land x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k)) \lor (x \in (B \cap A_{k+1}))\}$
+
+		$\hspace{6em}= (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k) \cup (B \cap A_{k+1})$
+
+		$\hspace{6em}= (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B \cap A_{k+1})$
+
+	\end{adjustwidth}
 \end{prf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
