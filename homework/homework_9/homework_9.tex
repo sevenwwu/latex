@@ -1,0 +1,268 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%      IGNORE THIS FIRST PART        %%%%%%%%%%   EXCEPT TO ENTER/DELETE YOUR NAME WHERE INDICATED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{amsart}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[labelformat=simple]{subcaption}
+\usepackage[framemethod=default]{mdframed}
+\usepackage{framed}
+\usepackage{setspace}
+\usepackage{changepage}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+\renewcommand\thesubfigure{(\Alph{subfigure})}
+
+\newcounter{problem_number}[section]
+\newcommand{\num}{\refstepcounter{problem_number}\arabic{problem_number}}
+\newcommand{\numlabel}[1]{\refstepcounter{problem_number}\label{#1}\arabic{problem_number}}
+
+\newtheorem*{theorem}{Theorem}
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3}}
+\theoremstyle{named}
+\newtheorem*{namedtheorem}{Theorem}
+
+\newenvironment{prf}
+{\medskip\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Proof]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}\medskip}
+
+\newenvironment{soln}
+{\begin{color}{Gray}\begin{framed}\begin{color}{NavyBlue}\begin{proof}[Solution]
+\doublespacing}
+{\end{proof}\end{color}\end{framed}\end{color}}
+
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{problem}[proposition]{Problem}
+
+\setenumerate[1]{label=(\roman*)}
+
+\newcommand{\jeff}[1]{\textbf{\textcolor{WildStrawberry}{#1}}}
+\newcommand{\student}[1]{\textbf{\textcolor{Orange}{#1}}}
+\newcommand{\peer}[1]{\textbf{\textcolor{ForestGreen}{#1}}}
+
+\textwidth=6.5in
+\hoffset-.75in
+\textheight=9in
+\voffset-.75in
+\footskip=30pt
+\headheight=14pt
+\pagestyle{fancy}
+\lhead{\emph{\textcolor{Gray}{Homework \#9}}}			%%  UPDATE THE VERSION HERE!!!
+\rhead{\emph{\textcolor{Gray}{Seven Lewis}}}			%%  ENTER/DELETE YOUR NAME HERE!!!
+\chead{\emph{\textcolor{Gray}{MATH 309}}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\thispagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       ADD CUSTOM COMMANDS HERE     %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\renewcommand{\S}{\mathbb S}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\RP}{\mathbb{RP}}
+
+\newcommand{\Ll}{\mathcal L}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\Rr}{\mathcal R}
+
+\newcommand{\Line}[1]{\overleftrightarrow{#1}}
+\newcommand{\Ray}[1]{\overrightarrow{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%       NOW THE DOCUMENT BEGINS      %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+Prove the following propositions. Format your proof so each step of the proof is on its own line; each line should still be a complete sentence.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proposition}
+	If $n\in\N$, then
+	$$\frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{n}{(n+1)!} = 1 - \frac{1}{(n+1)!}.$$
+	
+\end{proposition}
+
+\begin{prf}
+	\phantom{ }
+
+	Suppose $n \in \mathbb N$.
+
+	\textbf{Basis Step:} $n = 1$
+	\begin{adjustwidth}{2em}{0em}
+		$\displaystyle\frac{1}{2!} = 1 - \frac{1}{(1)+1}$.
+
+		\hspace*{1.3em}$\displaystyle = \frac{1}{2!}$ \hspace*{1em}\checkmark True
+	\end{adjustwidth}
+
+	\vspace*{0.5em}
+
+	\textbf{Inductive Step:} $n = k + 1$
+	\begin{adjustwidth}{2em}{0em}
+		Assume $\displaystyle \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{k}{(k+1)!} = 1 - \frac{1}{(k+1)!}$.
+		
+		Show that: 
+
+		$\displaystyle 1 - \frac{1}{((k+1)+1)!} = \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{(k+1)}{((k+1)+1)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\cdots+\frac{k}{(k+1)!} +\frac{(k+1)}{((k+1)+1)!}$
+		
+		\vspace*{0.5em}
+		
+		\hspace*{8.105em}$\displaystyle = (1 - \frac{1}{(k+1)!}) +\frac{(k+1)}{((k+1)+1)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = (1 - \frac{1}{(k+1)!}) +\frac{(k+1)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 + (- \frac{1}{(k+1)!} \cdot \frac{k+2}{k+2}) +\frac{(k+1)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 + (- \frac{k+2}{(k+2)!}) +\frac{(k+1)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 + \frac{(k+1) - (k+2)}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 - \frac{1}{(k+2)!}$
+
+		\vspace*{0.5em}
+
+		\hspace*{8.105em}$\displaystyle = 1 - \frac{1}{((k+1)+1)!}$ \hspace*{1em}\checkmark True
+	\end{adjustwidth}
+\end{prf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+	A chocolate bar consists of unit squares arranged in an $n\times m$ rectangular grid.
+	You may split the bar into individual unit squares by breaking along the lines. What is the number of breaks required?
+	Prove your answer is correct.
+\end{problem}
+
+\begin{soln}
+	\phantom{ }
+
+	\textbf{Proposition: } The number of breaks required is $nm - 1$. 
+
+	Suppose $n,m \in \mathbb N$.
+
+	\textbf{Basis Step:} $n = 1, m = 1$
+	\begin{adjustwidth}{2em}{0em}
+		This is $1 \times 1$ unit square, it requires no splits.
+
+		$0 = (1)(1) - 1 \hspace{1em} \checkmark$
+	\end{adjustwidth}
+
+	\textbf{Inductive Step for $n$ (without loss of generality for $m$):}
+	\begin{adjustwidth}{2em}{0em}
+		Assume that $n_km - 1$ is the number of breaks required
+		for a $n_k \times m$ chocolate bar. 
+
+		Additionally, assume that $m - 1$ is the number of breaks required
+		for a $1 \times m$ chocolate bar. This is when $n = 1$. 
+
+		A chocolate bar of $(n_k + 1) \times m$ size will have an additional
+		row of length $m$.
+
+		If we first split this additional row off, we are left with a
+		$n_k \times m$ piece and a $1 \times m$ piece. 
+
+		These pieces have been assumed to require $n_km - 1$ and $m - 1$ splits
+		respectively.
+
+		This sums to $(1) + (n_km - 1) + (m - 1) \implies (n_k+1)m - 1$.
+	\end{adjustwidth}
+\end{soln}
+
+\vspace*{14em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proposition}
+	Let $n\in\N$ with $n\geq 2$, and let $A_1, A_2, \ldots, A_n$ be sets.
+	Let $B$ be a set.
+	Then,
+	$$B\cap(A_1\cup A_2\cup \cdots\cup A_n) = (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_n).$$
+\end{proposition}
+
+\begin{prf}
+	\phantom{ }
+
+	\textbf{Basis Step:} $n = 2$
+	\begin{adjustwidth}{2em}{0em}
+		$B \cap (A_1 \cup A_2) = \{x : x \in B \land x \in (A_1 \cup A_2)\}$
+
+		$\hspace{6.46em} = \{x : x \in B \land x \in (A_1 \cup A_2)\}$
+
+		$\hspace{6.46em} = \{x : x \in B \land (x \in A_1 \lor x \in A_2)\}$
+
+		$\hspace{6.46em} = \{x : (x \in B \land x \in A_1) \lor (x \in B \land x \in A_2)\}$
+
+		$\hspace{6.46em} = \{x : (x \in B \cap A_1) \lor (x \in B \cap A_2)\}$
+
+		$\hspace{6.46em} = (B \cap A_1) \cup (B \cap A_2)$
+	\end{adjustwidth}
+
+	\textbf{Inductive Step:} $n = k + 1$
+	\begin{adjustwidth}{2em}{0em}
+		Assume that $B\cap(A_1\cup A_2\cup \cdots\cup A_k) = (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k)$.
+
+		\phantom{ }
+
+		$B\cap(A_1\cup A_2\cup \cdots\cup A_{k+1}) =$
+
+		$\hspace{6em}= \{x : x \in B \land x \in (A_1\cup A_2\cup \cdots\cup A_{k+1})\}$
+
+		$\hspace{6em}= \{x : x \in B \land x \in (A_1\cup \cdots\cup A_k \cup A_{k+1})\}$
+
+		$\hspace{6em}= \{x : x \in B \land (x \in (A_1\cup \cdots\cup A_k) \lor x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in B \land x \in (A_1\cup \cdots\cup A_k)) \lor (x \in B \land x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in (B \cap (A_1\cup \cdots\cup A_k))) \lor (x \in B \land x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k)) \lor (x \in B \land x \in A_{k+1})\}$
+
+		$\hspace{6em}= \{x : (x \in (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k)) \lor (x \in (B \cap A_{k+1}))\}$
+
+		$\hspace{6em}= (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B\cap A_k) \cup (B \cap A_{k+1})$
+
+		$\hspace{6em}= (B\cap A_1)\cup (B\cap A_2) \cup \cdots \cup (B \cap A_{k+1})$
+
+	\end{adjustwidth}
+\end{prf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
