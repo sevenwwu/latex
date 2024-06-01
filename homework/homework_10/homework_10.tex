@@ -18,6 +18,11 @@
 \usepackage[framemethod=default]{mdframed}
 \usepackage{framed}
 \usepackage{setspace}
+\usepackage{changepage}
+
+\setlength{\parindent}{0pt}
+
+
 \newmdenv[linecolor=NavyBlue,backgroundcolor=White]{myframe}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
 \renewcommand\thesubfigure{(\Alph{subfigure})}
@@ -102,18 +107,31 @@
 		\item $f\left([0,\pi]\right)$
 		\item $f\left(\{\pi\}\right)$
 		\item $f\left((0,\frac{\pi}{2})\right)$
-		\item $f\left((0,\pi\right)$
-		\item $f^{-1}\left(\{-1,1\}\right)$
-		\item $f^{-1}\left(\{0,1\}\right) = \{0,\pi,2\pi\}$
+		\item $f\left((0,\pi)\right)$
+		\item $f^{-1}\left(\{-1,1\}\right) = \{0,\pi,2\pi\}$
+		\item $f^{-1}\left(\{0,1\}\right)$
 		\item $f^{-1}\left((-1,0)\right)$
 		\item $f^{-1}\left(\{0\}\right)$
 	\end{enumerate}
 \end{problem}
 
 \begin{soln}
+    \phantom{ }
 
+    \begin{enumerate}
+        \item $[-1,1]$
+        \item $-1$
+        \item $(0,1)$
+        \item $(-1,1)$
+        \item $\{0,\pi,2\pi\}$
+        \item $\{\frac{\pi}{2},\pi,\frac{3\pi}{2},2\pi\}$
+        \item $(\frac{\pi}{2},\frac{3\pi}{2})$
+        \item $\{\frac{\pi}{2},\frac{3\pi}{2}\}$
+    \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{20em}
 
 \begin{problem}
 	Consider $f\colon A\to B$.
@@ -124,7 +142,21 @@
 \end{problem}
 
 \begin{soln}
-	
+	\phantom{ }
+    
+    \begin{enumerate}
+        \item 
+        \phantom{ }
+
+        \noindent Suppose some function $f$ is injective.
+
+        \noindent Then, for all $n,m \in A$ where $n \neq m$, $f(n) \neq f(m)$.
+
+        \noindent Additionally, the inverse relation $f^{-1}$ 
+        
+        \noindent Consider each element $x \in X$. Because its unique, by definition
+        of a set, $f(x)$ is also unique. 
+    \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
