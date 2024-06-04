@@ -148,18 +148,26 @@
         \item 
         \phantom{ }
 
-        \noindent Suppose some function $f$ is injective with a range of $B'$.
+        \noindent Suppose the function $f$ is injective with a range of $B'$.
 
-        \noindent Then, for all $n,m \in A$ where $n \neq m$, $f(n) \neq f(m)$.
+        \noindent Then, for all $n,m \in A$ where $n \neq m$, $f(n) \neq f(m)$
+        and $f(n), f(m) \in B'$.
 
-        \noindent Additionally, the inverse relation $f^{-1}$ can be restricted
-        to the domain $B'$ to yield the function $f^{-1}_\text{res}$. 
-        
-        \noindent This inverse function is trivial injective because
-        that's what it means to be a function.
-        
-        \noindent Consider each element $x \in X$. Because its unique, by definition
-        of a set, $f(x)$ is also unique. 
+        \noindent Observe that the inverse relation $f'$ may not be a function
+        because $B'$ is not always $B$. However, if we restrict it's domain
+        to $B'$ so that $f'_{\text{res}} : B' \rightarrow A$, then it is
+        both a function and bijective. 
+
+        \noindent Similarly, if we go back and restrict $f$'s codomain such that
+        $f_{\text{res}} : A \rightarrow B'$ then it is also bijective.
+
+        \noindent Thus, $f^{-1}_{\text{res}}(f_\text{res}(x)) = i_A$.
+
+        \noindent This ensures that for every $x \in X$, $x = f^{-1}(f(x))$. 
+
+        \noindent So, $X = f^-1(f(X))$ 
+
+        \noindent 
     \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
