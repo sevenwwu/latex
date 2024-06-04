@@ -120,7 +120,7 @@
 
     \begin{enumerate}
         \item $[-1,1]$
-        \item $-1$
+        \item $\{-1\}$
         \item $(0,1)$
         \item $(-1,1)$
         \item $\{0,\pi,2\pi\}$
@@ -150,22 +150,31 @@
 
         \noindent Suppose the function $f$ is injective with a range of $B'$.
 
-        \noindent Then, for all $n,m \in A$ where $n \neq m$, $f(n) \neq f(m)$
-        and $f(n), f(m) \in B'$.
+        \noindent Suppose $x,y \in X$ and $X \subseteq A$.
 
-        \noindent Observe that the inverse relation $f'$ may not be a function
-        because $B'$ is not always $B$. However, if we restrict it's domain
-        to $B'$ so that $f'_{\text{res}} : B' \rightarrow A$, then it is
-        both a function and bijective. 
+        \noindent Then, $f(x) = f(y)$ if and only if $x = y$.
 
-        \noindent Similarly, if we go back and restrict $f$'s codomain such that
-        $f_{\text{res}} : A \rightarrow B'$ then it is also bijective.
+        \noindent Observe that $f^{-1}(z)$ is not a function but
+        behaves as an injective function if $z \in B'$. 
 
-        \noindent Thus, $f^{-1}_{\text{res}}(f_\text{res}(x)) = i_A$.
+        \noindent Because $f(x), f(y) \in B'$, $f^{-1}(f(x)) = f^{-1}(f(y))$
+        if and only if $f(x) = f(y)$. 
 
-        \noindent This ensures that for every $x \in X$, $x = f^{-1}(f(x))$. 
+        \noindent So, $f^{-1}(f(x)) = f^{-1}(f(y))$ if and only if $x = y$.
 
-        \noindent So, $X = f^-1(f(X))$ 
+        \noindent Thus, $X = f^{-1}(f(X))$. 
+
+        \phantom{ }
+
+        \noindent Suppose that $X = f^{-1}(f(X))$ for all $X$ where $X \subseteq A$.
+
+        \noindent So, for all singletons $\{x\} \subseteq X$, $\{x\} = f^{-1}(f(\{x\}))$.
+
+        NOTE: come up with some way to show that f(x) = f(y), so x = y.
+
+
+
+        
 
         \noindent 
     \end{enumerate}
