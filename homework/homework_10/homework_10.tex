@@ -154,13 +154,18 @@
 
         \noindent Then, $f(x) = f(y)$ if and only if $x = y$.
 
-        \noindent Observe that $f^{-1}(z)$ is not a function but
-        behaves as an injective function if $z \in B'$. 
+        \noindent Observe that $f^{-1}$ is not a function but
+        behaves as an injective function for all singletons that are subsets
+        of  $B'$. 
 
-        \noindent Because $f(x), f(y) \in B'$, $f^{-1}(f(x)) = f^{-1}(f(y))$
+        \noindent Because $f(\{x\}), f(\{y\}) \subseteq B'$, $f^{-1}(f(\{x\})) = f^{-1}(f(\{y\}))$
         if and only if $f(x) = f(y)$. 
 
-        \noindent So, $f^{-1}(f(x)) = f^{-1}(f(y))$ if and only if $x = y$.
+        \noindent So, $f^{-1}(f(\{x\})) = f^{-1}(f(\{y\}))$ if and only if $x = y$.
+
+        \noindent So, $f^{-1}(f(\{x\})) = \{x\}$.
+        
+        \noindent Thus, $f^{-1}(f(\bigcup_{x \in X}\{x\})) = X$
 
         \noindent Thus, $X = f^{-1}(f(X))$. 
 
