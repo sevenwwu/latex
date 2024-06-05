@@ -148,40 +148,46 @@
         \item 
         \phantom{ }
 
+        \noindent Suppose $X \subseteq A$.
+
         \noindent Suppose the function $f$ is injective with a range of $B'$.
 
-        \noindent Suppose $x,y \in X$ and $X \subseteq A$.
+        \noindent Then it's image $f_{\text{image}}$ would be an bijective function from $\mathscr
+        P (A)$ to $\mathscr P(B')$. 
 
-        \noindent Then, $f(x) = f(y)$ if and only if $x = y$.
+        \noindent Recall that bijective functions are invertible, so $f^{-1}_{\text{image}} : 
+        \mathscr P(B') \rightarrow \mathscr P(A)$
 
-        \noindent Observe that $f^{-1}$ is not a function but
-        behaves as an injective function for all singletons that are subsets
-        of  $B'$. 
-
-        \noindent Because $f(\{x\}), f(\{y\}) \subseteq B'$, $f^{-1}(f(\{x\})) = f^{-1}(f(\{y\}))$
-        if and only if $f(x) = f(y)$. 
-
-        \noindent So, $f^{-1}(f(\{x\})) = f^{-1}(f(\{y\}))$ if and only if $x = y$.
-
-        \noindent So, $f^{-1}(f(\{x\})) = \{x\}$.
+        \noindent So, the images composed: $f^{-1}_\text{image} \circ f_\text{image} = i_{\mathscr P(A)}$.
         
-        \noindent Thus, $f^{-1}(f(\bigcup_{x \in X}\{x\})) = X$
-
-        \noindent Thus, $X = f^{-1}(f(X))$. 
+        \noindent Thus, $f^{-1}(f(X)) = X$.
 
         \phantom{ }
 
         \noindent Suppose that $X = f^{-1}(f(X))$ for all $X$ where $X \subseteq A$.
 
-        \noindent So, for all singletons $\{x\} \subseteq X$, $\{x\} = f^{-1}(f(\{x\}))$.
+        \noindent So, for all singletons $\{x\} \subseteq A$, $\{x\} = f^{-1}(f(\{x\}))$.
 
-        NOTE: come up with some way to show that f(x) = f(y), so x = y.
+        \noindent Assume there exists some $y,z \in A$ such that $f(y) = f(z)$ and $y \neq z$. 
 
+        \noindent So, the set $f^{-1}(f(\{y\}))$ contains both $y$ and $z$. 
 
+        \noindent This is a contradiction. So, if $f(y) = f(z)$, then $y = z$.
+
+        \noindent Thus, $f$ is injective.     
+
+        \item
+        \phantom{ }
+        
+        \noindent Suppose $Y \subseteq B$.
+
+        \noindent Suppose the function $f$ is surjective. 
+
+        \noindent Then, for every $y \in B$, $f^{-1}(\{y\}) \neq \varnothing$.
+        
+        \noindent So, $f(f^{-1}(\{y\})) = \{y\}$. 
 
         
-
-        \noindent 
     \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
