@@ -164,7 +164,7 @@
 
         \phantom{ }
 
-        \noindent Suppose that $X = f^{-1}(f(X))$ for all $X$ where $X \subseteq A$.
+        \noindent Suppose that $X = f^{-1}(f(X))$ for all $X \subseteq A$.
 
         \noindent So, for all singletons $\{x\} \subseteq A$, $\{x\} = f^{-1}(f(\{x\}))$.
 
@@ -183,11 +183,24 @@
 
         \noindent Suppose the function $f$ is surjective. 
 
-        \noindent Then, for every $y \in B$, $f^{-1}(\{y\}) \neq \varnothing$.
+        \noindent Then, for every $b \in B$, $f^{-1}(\{b\}) \neq \varnothing$.
         
-        \noindent So, $f(f^{-1}(\{y\})) = \{y\}$. 
+        % \noindent So, $f(f^{-1}(\{b\})) = \{b\}$. 
 
-        
+        \noindent Because this is true for every $b \in B$, it is certainly true
+        for all elements of $Y$. 
+
+        \noindent So, $f(f^{-1}(Y)) = Y$. 
+
+        \phantom{ }
+
+        \noindent Suppose $Y = f(f^{-1}(Y))$ for all $Y \subseteq B$.
+
+        \noindent So, for all singletons $\{y\} \subseteq B$, $\{y\} = f(f^{-1}(\{y\}))$.
+
+        \noindent Therefore, for every $y \in B$, there is some $x \in A$ such that $f(x) = y$. 
+
+
     \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
