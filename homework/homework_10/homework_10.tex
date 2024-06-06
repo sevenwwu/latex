@@ -152,13 +152,45 @@
 
         \noindent Suppose the function $f$ is injective with a range of $B'$.
 
-        \noindent Then it's image $f_{\text{image}}$ would be an bijective function from $\mathscr
-        P (A)$ to $\mathscr P(B')$. 
+        \noindent Consider the image of $f_\text{img} : \mathscr P(A) \rightarrow \mathscr P(B')$
+        where 
+        
+        \noindent $f_\text{img} = \{(X,\{f(x) \in B' : x \in X\}) \in \mathscr P(A) \times \mathscr P(B')\}$.
 
-        \noindent Recall that bijective functions are invertible, so $f^{-1}_{\text{image}} : 
+        \noindent This relationship is a function because for every subset $X$ of $A$
+        there is exactly one related subset of $B'$, particularly $\{f(x) \in B' : x \in X\}$.
+
+        \noindent $f_\text{img}$ is also injective, as seen below:
+
+        \begin{adjustwidth}{2em}{0em}
+            \noindent Assume $f_\text{img}$ is not injective.
+
+            \noindent Then, for some $M$ and $N$, $f_\text{img}(M) = f_\text{img}(N)$ and $M \neq N$.
+
+            \noindent Then $\{f(x) \in B' : x \in M\} = \{f(x) \in B' : x \in N\}$.
+
+            \noindent Let $m \in M$ and $x \notin N$ without loss of generality.
+
+            \noindent Because $f$ is injective, $f(m)$ is only in $f_\text{img}(M)$
+            and not $f_\text{img}(N)$.
+
+            \noindent So, $f_\text{img}(M) \neq f_\text{img}(N)$, which is a contradiction.
+        \end{adjustwidth}
+
+        \noindent $f_\text{img}$ is also surjective:
+
+        \begin{adjustwidth}{2em}{0em}
+            Let $M \in \mathscr P(B')$.
+
+            \noindent Then $M = f_\text{img}(\{x \in A : f(x) \in M\})$.
+        \end{adjustwidth}
+
+        \noindent So $f_\text{img}$ is bijective. 
+
+        \noindent Recall that bijective functions are invertible, so $f^{-1}_{\text{img}} : 
         \mathscr P(B') \rightarrow \mathscr P(A)$
 
-        \noindent So, the images composed: $f^{-1}_\text{image} \circ f_\text{image} = i_{\mathscr P(A)}$.
+        \noindent So, the images composed: $f^{-1}_\text{img} \circ f_\text{img} = i_{\mathscr P(A)}$.
         
         \noindent Thus, $f^{-1}(f(X)) = X$.
 
@@ -172,7 +204,7 @@
 
         \noindent So, the set $f^{-1}(f(\{y\}))$ contains both $y$ and $z$. 
 
-        \noindent This is a contradiction. So, if $f(y) = f(z)$, then $y = z$.
+        \noindent This is a contradiction. So, if $f(y) = f(z)$, then $y = z$, for all $y,z \in A$.
 
         \noindent Thus, $f$ is injective.     
 
@@ -189,6 +221,14 @@
 
         \noindent Because this is true for every $b \in B$, it is certainly true
         for all elements of $Y$. 
+
+        \noindent In symbols:
+
+        \noindent $\{f(x) : x \in \{x \in A : f(x) \in Y\}\} = Y$
+
+        \noindent Every element of $Y$ is reachable by some $x$, which is
+        included in the set $\{x \in A : f(x) \in Y\}$. This set is then
+        used to get $f$'s image. 
 
         \noindent So, $f(f^{-1}(Y)) = Y$. 
 
