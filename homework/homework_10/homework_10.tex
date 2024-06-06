@@ -215,22 +215,35 @@
 
         \noindent Suppose the function $f$ is surjective. 
 
-        \noindent Then, for every $b \in B$, $f^{-1}(\{b\}) \neq \varnothing$.
-        
-        % \noindent So, $f(f^{-1}(\{b\})) = \{b\}$. 
+        \begin{adjustwidth}{2em}{0em}
+            \noindent Suppose $y \in Y$.
 
-        \noindent Because this is true for every $b \in B$, it is certainly true
-        for all elements of $Y$. 
+            \noindent Because $f$ is surjective, there is some $x_y$ for which $f(x_y) = y$.
+    
+            \noindent So, $x_y \in \{x : f(x) \in Y\}$ and $\{x : f(x) \in Y\} = f^{-1}(Y)$.
+    
+            \noindent So, $x_y \in f^{-1}(Y)$. 
+    
+            \noindent Then $y \in \{f(x) : x \in f^{-1}(Y)\}$ and $\{f(x) : x \in f^{-1}(Y)\} = f(f^{-1}(Y))$.
+    
+            \noindent So, $y \in f(f^{-1}(Y))$.
 
-        \noindent In symbols:
+            \phantom{ }
 
-        \noindent $\{f(x) : x \in \{x \in A : f(x) \in Y\}\} = Y$
+            \noindent Suppose $y \in f(f^{-1}(Y))$. 
 
-        \noindent Every element of $Y$ is reachable by some $x$, which is
-        included in the set $\{x \in A : f(x) \in Y\}$. This set is then
-        used to get $f$'s image. 
+            \noindent Then $y \in \{f(x) : x \in \{x : f(x) \in Y\}\}$.
 
-        \noindent So, $f(f^{-1}(Y)) = Y$. 
+            \noindent So, there is some $x_y$ where $f(x_y) = y$ and $x_y \in \{x : f(x) \in Y\}$. 
+
+            \noindent So, $f(x_y) \in Y$, thus $y \in Y$. 
+        \end{adjustwidth}
+
+        \phantom{ }
+
+        \noindent Therefore, $Y = f(f^{-1}(Y))$ because an arbitrary element $y$ in either set is always in both sets. 
+
+        \phantom{ }
 
         \phantom{ }
 
