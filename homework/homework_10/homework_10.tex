@@ -124,8 +124,8 @@
         \item $(0,1)$
         \item $(-1,1)$
         \item $\{0,\pi,2\pi\}$
-        \item $\{\frac{\pi}{2},\pi,\frac{3\pi}{2},2\pi\}$
-        \item $(\frac{\pi}{2},\frac{3\pi}{2})$
+        \item $\{0,\frac{\pi}{2},\frac{3\pi}{2},2\pi\}$
+        \item $(\frac{\pi}{2},\pi)\cup (\pi,\frac{3\pi}{2})$
         \item $\{\frac{\pi}{2},\frac{3\pi}{2}\}$
     \end{enumerate}
 \end{soln}
@@ -150,49 +150,37 @@
 
         \noindent Suppose $X \subseteq A$.
 
-        \noindent Suppose the function $f$ is injective with a range of $B'$.
-
-        \noindent Consider the image of $f_\text{img} : \mathscr P(A) \rightarrow \mathscr P(B')$
-        where 
-        
-        \noindent $f_\text{img} = \{(X,\{f(x) \in B' : x \in X\}) \in \mathscr P(A) \times \mathscr P(B')\}$.
-
-        \noindent This relationship is a function because for every subset $X$ of $A$
-        there is exactly one related subset of $B'$, particularly $\{f(x) \in B' : x \in X\}$.
-
-        \noindent $f_\text{img}$ is also injective, as seen below:
+        \noindent Suppose the function $f$ is injective.
 
         \begin{adjustwidth}{2em}{0em}
-            \noindent Assume $f_\text{img}$ is not injective.
+            \noindent Suppose $m \in X$.
 
-            \noindent Then, for some $M$ and $N$, $f_\text{img}(M) = f_\text{img}(N)$ and $M \neq N$.
+            \noindent Because $f$ is a function, there is some $f(m)$ where $f(m) \in \{f(x) : x \in X\}$.
 
-            \noindent Then $\{f(x) \in B' : x \in M\} = \{f(x) \in B' : x \in N\}$.
+            \noindent So, $f(m) \in f(X)$.
 
-            \noindent Let $m \in M$ and $x \notin N$ without loss of generality.
+            \noindent So, $m \in \{x : f(x) \in f(X)\}$.
 
-            \noindent Because $f$ is injective, $f(m)$ is only in $f_\text{img}(M)$
-            and not $f_\text{img}(N)$.
+            \noindent Therefore, $m \in f^{-1}(f(X))$. 
 
-            \noindent So, $f_\text{img}(M) \neq f_\text{img}(N)$, which is a contradiction.
+            \phantom{ }
+
+            \noindent Suppose $m \in f^{-1}(f(X))$.
+
+            \noindent So, $m \in \{ x : f(x) \in f(X)\}$.
+
+            \noindent So, it must be the case that $f(m) \in f(X)$.
+
+            \noindent Expanded, $f(m) \in \{f(x) : x \in X\}$.
+
+            \noindent So, there is some $x \in X$ where $f(m) = f(x)$.
+
+            \noindent Because $f$ is injective, $m = x$.
+
+            \noindent So, $m \in X$. 
         \end{adjustwidth}
 
-        \noindent $f_\text{img}$ is also surjective:
-
-        \begin{adjustwidth}{2em}{0em}
-            Let $M \in \mathscr P(B')$.
-
-            \noindent Then $M = f_\text{img}(\{x \in A : f(x) \in M\})$.
-        \end{adjustwidth}
-
-        \noindent So $f_\text{img}$ is bijective. 
-
-        \noindent Recall that bijective functions are invertible, so $f^{-1}_{\text{img}} : 
-        \mathscr P(B') \rightarrow \mathscr P(A)$
-
-        \noindent So, the images composed: $f^{-1}_\text{img} \circ f_\text{img} = i_{\mathscr P(A)}$.
-        
-        \noindent Thus, $f^{-1}(f(X)) = X$.
+        \noindent So, $X = f^{-1}(f(X))$.
 
         \phantom{ }
 
@@ -206,7 +194,9 @@
 
         \noindent This is a contradiction. So, if $f(y) = f(z)$, then $y = z$, for all $y,z \in A$.
 
-        \noindent Thus, $f$ is injective.     
+        \noindent Thus, $f$ is injective.  
+        
+        \phantom{ }
 
         \item
         \phantom{ }
@@ -216,34 +206,31 @@
         \noindent Suppose the function $f$ is surjective. 
 
         \begin{adjustwidth}{2em}{0em}
-            \noindent Suppose $y \in Y$.
+            \noindent Suppose $n \in Y$.
 
-            \noindent Because $f$ is surjective, there is some $x_y$ for which $f(x_y) = y$.
+            \noindent Because $f$ is surjective, there is some $x_n$ for which $f(x_n) = n$.
     
-            \noindent So, $x_y \in \{x : f(x) \in Y\}$ and $\{x : f(x) \in Y\} = f^{-1}(Y)$.
+            \noindent So, $x_n \in \{x : f(x) \in Y\}$ and $\{x : f(x) \in Y\} = f^{-1}(Y)$.
     
-            \noindent So, $x_y \in f^{-1}(Y)$. 
+            \noindent So, $x_n \in f^{-1}(Y)$. 
     
-            \noindent Then $y \in \{f(x) : x \in f^{-1}(Y)\}$ and $\{f(x) : x \in f^{-1}(Y)\} = f(f^{-1}(Y))$.
+            \noindent Then $n \in \{f(x) : x \in f^{-1}(Y)\}$ and $\{f(x) : x \in f^{-1}(Y)\} = f(f^{-1}(Y))$.
     
-            \noindent So, $y \in f(f^{-1}(Y))$.
+            \noindent So, $n \in f(f^{-1}(Y))$.
 
             \phantom{ }
 
-            \noindent Suppose $y \in f(f^{-1}(Y))$. 
+            \noindent Suppose $n \in f(f^{-1}(Y))$. 
 
-            \noindent Then $y \in \{f(x) : x \in \{x : f(x) \in Y\}\}$.
+            \noindent Then $n \in \{f(x) : x \in \{x : f(x) \in Y\}\}$.
 
-            \noindent So, there is some $x_y$ where $f(x_y) = y$ and $x_y \in \{x : f(x) \in Y\}$. 
+            \noindent So, there is some $x_n$ where $f(x_n) = n$ and $x_n \in \{x : f(x) \in Y\}$. 
 
-            \noindent So, $f(x_y) \in Y$, thus $y \in Y$. 
+            \noindent So, $f(x_n) \in Y$, thus $n \in Y$. 
         \end{adjustwidth}
-
-        \phantom{ }
 
         \noindent Therefore, $Y = f(f^{-1}(Y))$ because an arbitrary element $y$ in either set is always in both sets. 
 
-        \phantom{ }
 
         \phantom{ }
 
@@ -251,9 +238,10 @@
 
         \noindent So, for all singletons $\{y\} \subseteq B$, $\{y\} = f(f^{-1}(\{y\}))$.
 
-        \noindent Therefore, for every $y \in B$, there is some $x \in A$ such that $f(x) = y$. 
+        \noindent Therefore, for every $y \in B$, there is some $x \in A$ such that $f(x) = y$ 
+        (particularly the only $x \in f^{-1}(\{y\})$). 
 
-
+        \noindent Thus, $f$ is surjective. 
     \end{enumerate}
 \end{soln}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
